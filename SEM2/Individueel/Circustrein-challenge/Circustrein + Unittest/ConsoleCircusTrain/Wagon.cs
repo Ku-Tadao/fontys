@@ -1,49 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleCircusTrain
+﻿public class Wagon
 {
-    internal class Wagon
+    public List<Animal> Animals { get; set; } = new List<Animal>();
+    public int Capacity { get; set; } = 10;
+    public int RemainingCapacity => Capacity - Animals.Sum(a => a.Points);
+
+    public bool CanAddAnimal(Animal animal)
     {
+        if (animal.Points > RemainingCapacity) return false;
 
-        public int Id { get; }
-        public List<Animal> Animals { get; }
-
-        public Wagon(int id)
+        if (animal.AnimalDiet == Animal.Diet.Carnivore)
         {
-            Id = id;
-            Animals = new List<Animal>();
+            return !Animals.Any(a => a.AnimalSize <= animal.AnimalSize);
         }
-
-        public bool CanAddAnimal(Animal animal)
+        else
         {
-            if (Animals.Count == 0)
-            {
-                return true;
-            }
-
-            if (animal.Diet == Diet.Plants)
-            {
-                int points = Animals.Count * (int)Animals[0].Size;
-                return points + (int)animal.Size <= 10;
-            }
-
-            foreach (Animal a in Animals)
-            {
-                if (a.Size >= animal.Size)
-                {
-                    return false;
-                }
-            }
-
-            int points2 = Animals.Count * (int)Animals[0].Size;
-            return points2 + (int)animal.Size <= 10;
+            return !Animals.Any(a => a.AnimalDiet == Animal.Diet.Carnivore && a.AnimalSize >= animal.AnimalSize);
         }
+    }
 
-        public void AddAnimal(Animal animal)
+    public void AddAnimal(Animal animal)
+    {
+        if (CanAddAnimal(animal))
         {
             Animals.Add(animal);
         }

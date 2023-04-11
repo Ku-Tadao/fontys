@@ -1,0 +1,15 @@
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\ConsoleCircusTrainTest.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\ConsoleCircusTrainTest.pdb
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\obj\Debug\ConsoleCircusTrainTest.csproj.AssemblyReference.cache
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\obj\Debug\ConsoleCircusTrainTest.csproj.CoreCompileInputs.cache
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\obj\Debug\ConsoleCircusTrainTest.csproj.CopyComplete
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\obj\Debug\ConsoleCircusTrainTest.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\obj\Debug\ConsoleCircusTrainTest.pdb
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrainTest\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll

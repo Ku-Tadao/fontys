@@ -1,0 +1,15 @@
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\bin\Debug\net7.0\ConsoleCircusTrain.exe
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\bin\Debug\net7.0\ConsoleCircusTrain.deps.json
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\bin\Debug\net7.0\ConsoleCircusTrain.runtimeconfig.json
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\bin\Debug\net7.0\ConsoleCircusTrain.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\bin\Debug\net7.0\ConsoleCircusTrain.pdb
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.csproj.AssemblyReference.cache
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.GeneratedMSBuildEditorConfig.editorconfig
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.AssemblyInfoInputs.cache
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.AssemblyInfo.cs
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.csproj.CoreCompileInputs.cache
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\refint\ConsoleCircusTrain.dll
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.pdb
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ConsoleCircusTrain.genruntimeconfig.cache
+C:\fontys\SEM2\Individueel\Circustrein-challenge\Circustrein + Unittest\ConsoleCircusTrain\obj\Debug\net7.0\ref\ConsoleCircusTrain.dll

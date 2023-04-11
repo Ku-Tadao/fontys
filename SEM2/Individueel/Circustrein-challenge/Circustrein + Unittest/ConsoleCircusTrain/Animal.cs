@@ -1,40 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleCircusTrain
+﻿public class Animal
 {
-    internal class Animal : IComparable<Animal>
-    {
-        public string Name { get; }
-        public Diet Diet { get; }
-        public Size Size { get; }
+    public enum Diet { Herbivore, Carnivore };
+    public enum Size { Small, Medium, Large };
 
-        public Animal(string name, Diet diet, Size size)
+    public Diet AnimalDiet { get; set; }
+    public Size AnimalSize { get; set; }
+
+    public int Points
+    {
+        get
         {
-            Name = name;
-            Diet = diet;
-            Size = size;
+            return AnimalSize switch
+            {
+                Size.Small => 1,
+                Size.Medium => 3,
+                Size.Large => 5,
+                _ => 0
+            };
         }
-
-        public int CompareTo(Animal other)
-        {
-            return Size.CompareTo(other.Size);
-        }
-    }
-
-    public enum Diet
-    {
-        Meat,
-        Plants
-    }
-
-    public enum Size
-    {
-        Small = 1,
-        Medium = 3,
-        Large = 5
     }
 }

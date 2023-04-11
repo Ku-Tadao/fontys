@@ -1,64 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 
-namespace ConsoleCircusTrainTest
+[TestClass]
+public class WagonTests
 {
-    [TestClass]
-    public class UnitTest1
+    [TestMethod]
+    public void TestCarnivoreCannotEatAnotherAnimal()
     {
-        [TestClass]
-        public class TrainUnitTest
-        {
-            [TestMethod]
-            public void AddAnimalToWagon_SmallCarnivoreInEmptyWagon_ShouldReturnTrue()
-            {
-                // Arrange
-                Wagon wagon = new Wagon();
-                Animal animal = new Animal("Small Carnivore animal", Diet.Meat, Size.Small);
+        // Arrange
+        Animal carnivore = new Animal { AnimalDiet = Animal.Diet.Carnivore, AnimalSize = Animal.Size.Medium };
+        Animal herbivore = new Animal { AnimalDiet = Animal.Diet.Herbivore, AnimalSize = Animal.Size.Small };
+        Wagon wagon = new Wagon();
 
-                var result = wagon.CanAddAnimal(animal);
+        // Act
+        wagon.AddAnimal(carnivore);
+        wagon.AddAnimal(herbivore);
 
-                wagon.AddAnimal(animal);
-
-                // Assert
-                Assert.IsTrue(result);
-            }
-
-            [TestMethod]
-            public void AddAnimalToWagon_LargeHerbivoreInWagonWithSmallCarnivore_ShouldReturnTrue()
-            {
-                // Arrange
-                Wagon wagon = new Wagon();
-                wagon.AddAnimal(new Animal("Small Carnivore Animal" ,Diet.Meat, Size.Small));
-                Animal animal = new Animal("Large Herbivore Animal" ,Diet.Plants, Size.Large);
-
-                // Act
-                wagon.AddAnimal(animal);
-
-                // Assert
-                Assert.AreEqual(2, wagon.Animals.Count);
-                Assert.IsTrue(wagon.Animals.Contains(animal));
-            }
-
-            [TestMethod]
-            public void GetTrainComposition_ThreeAnimalsInTwoWagons_ShouldReturnCorrectComposition()
-            {
-                // Arrange
-                Wagon wagon = new Wagon();
-                wagon.AddAnimal(new Animal("Large Herbivore Animal", Diet.Plants, Size.Large));
-                wagon.AddAnimal(new Animal("Medium Carnivore Animal", Diet.Meat, Size.Medium));
-                wagon.AddAnimal(new Animal("Medium Herbivore Animal", Diet.Plants, Size.Medium));
-
-                // Act (kan verkeerd zijn, not sure)
-                List<Wagon> composition = new List<Wagon> {wagon};
-
-                // Assert
-                Assert.AreEqual(1, composition.Count);
-                Assert.AreEqual(3, composition[0].Animals.Count);
-            }
-        }
+        // Assert
+        Assert.AreEqual(1, wagon.Animals.Count);
     }
 }
