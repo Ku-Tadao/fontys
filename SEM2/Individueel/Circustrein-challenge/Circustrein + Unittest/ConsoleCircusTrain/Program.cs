@@ -1,4 +1,5 @@
-﻿class Program
+﻿using System;
+class Program
 {
     static void Main(string[] args)
     {
@@ -6,6 +7,25 @@
         List<Wagon> wagons = new List<Wagon>();
 
         // Add code here to interact with the user and add animals to the animals list
+
+        Console.WriteLine("Type an animal");
+        var animalChoice = Console.ReadLine();
+
+        Console.WriteLine("Carnivore or Herbivore?");
+        var choice = 0;
+        switch (choice)
+        {
+            case 1:
+            {
+                
+                Console.WriteLine();
+                return;
+            }
+            default:
+            {
+                break;
+                }
+        }
 
         foreach (Animal animal in animals)
         {
