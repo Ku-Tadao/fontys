@@ -1,53 +1,35 @@
-﻿using System;
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
-        List<Animal> animals = new List<Animal>();
-        List<Wagon> wagons = new List<Wagon>();
+        Train train = new Train();
 
-        // Add code here to interact with the user and add animals to the animals list
+        Console.WriteLine("Welcome to the Circus Train!");
 
-        Console.WriteLine("Type an animal");
-        var animalChoice = Console.ReadLine();
-
-        Console.WriteLine("Carnivore or Herbivore?");
-        var choice = 0;
-        switch (choice)
+        List<Animal> animals = new List<Animal>
         {
-            case 1:
-            {
-                
-                Console.WriteLine();
-                return;
-            }
-            default:
-            {
-                break;
-                }
-        }
+            new() {AnimalDiet = "Carnivore", AnimalSize ="Large"},
+            new() {AnimalDiet = "Carnivore", AnimalSize ="Medium"},
+            new() {AnimalDiet = "Carnivore", AnimalSize ="Small"},
+            new() {AnimalDiet = "Herbivore", AnimalSize = "Large"},
+            new() {AnimalDiet = "Herbivore", AnimalSize = "Medium"},
+            new() {AnimalDiet = "Herbivore", AnimalSize = "Small"}
+    };
 
-        foreach (Animal animal in animals)
+        train.AddAnimals(animals);
+
+
+        Console.WriteLine("\nAnimals distribution in wagons:");
+        int wagonNumber = 1;
+        foreach (Wagon wagon in train.Wagons)
         {
-            bool added = false;
-            foreach (Wagon wagon in wagons)
+            Console.WriteLine($"Wagon {wagonNumber}:");
+            foreach (Animal animal in wagon.Animals)
             {
-                if (wagon.CanAddAnimal(animal))
-                {
-                    wagon.AddAnimal(animal);
-                    added = true;
-                    break;
-                }
+                Console.WriteLine($" - {animal.AnimalDiet} {animal.AnimalSize} ({animal.Points} points)");
             }
-
-            if (!added)
-            {
-                Wagon newWagon = new Wagon();
-                newWagon.AddAnimal(animal);
-                wagons.Add(newWagon);
-            }
+            Console.WriteLine($"Total points: {wagon.Capacity - wagon.RemainingCapacity}/{wagon.Capacity}\n");
+            wagonNumber++;
         }
-
-        // Output the distribution of animals in wagons
     }
 }

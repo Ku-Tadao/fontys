@@ -1,25 +1,21 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using CircusTrainTest;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CircusTrainTest
+[TestClass]
+public class TrainTests
 {
-    [TestClass]
-    public class UnitTest1
+    [TestMethod]
+    public void TestAddAnimalToNewWagonInTrain()
     {
-        [TestMethod]
-        public void CarnivoreCannotEatAnotherAnimal()
-        {
-            // Arrange
-            Animal carnivore = new Animal { AnimalDiet = Animal.Diet.Carnivore, AnimalSize = Animal.Size.Medium };
-            Animal herbivore = new Animal { AnimalDiet = Animal.Diet.Herbivore, AnimalSize = Animal.Size.Small };
-            Wagon wagon = new Wagon();
+        // Arrange
+        Animal animal = new Animal { AnimalDiet = Animal.Diet.Herbivore, AnimalSize = Animal.Size.Medium };
+        Train train = new Train();
 
-            // Act
-            wagon.AddAnimal(carnivore);
-            wagon.AddAnimal(herbivore);
+        // Act
+        train.AddAnimal(animal);
 
-            // Assert
-            Assert.AreEqual(1, wagon.Animals.Count);
-        }
+        // Assert
+        Assert.AreEqual(1, train.Wagons.Count);
+        Assert.AreEqual(animal, train.Wagons[0].Animals[0]);
     }
 }

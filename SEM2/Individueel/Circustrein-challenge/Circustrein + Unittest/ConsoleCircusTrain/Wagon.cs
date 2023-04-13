@@ -1,28 +1,66 @@
 ﻿public class Wagon
 {
-    public List<Animal> Animals { get; set; } = new List<Animal>();
-    public int Capacity { get; set; } = 10;
-    public int RemainingCapacity => Capacity - Animals.Sum(a => a.Points);
+    private List<Animal> _animals = new List<Animal>();
+
+    public IReadOnlyList<Animal> Animals => _animals.AsReadOnly();
+    public int Capacity { get; } = 10;
+
+    // lambda met sum:
+    // public int RemainingCapacity => Capacity - _animals.Sum(a => a.Points);
+
+    public int RemainingCapacity
+    {
+        get
+        {
+            int usedCapacity = 0;
+            foreach (Animal animal in _animals)
+            {
+                usedCapacity += animal.Points;
+            }
+            return Capacity - usedCapacity;
+        }
+    }
+
 
     public bool CanAddAnimal(Animal animal)
     {
         if (animal.Points > RemainingCapacity) return false;
 
-        if (animal.AnimalDiet == Animal.Diet.Carnivore)
+        bool hasCarnivore = false;
+        foreach (Animal otherAnimal in _animals)
         {
-            return !Animals.Any(a => a.AnimalSize <= animal.AnimalSize);
+            if (otherAnimal.AnimalDiet == "Carnivore")
+            {
+                hasCarnivore = true;
+                if (otherAnimal.AnimalSize == "Large") return false;
+            }
+        }
+
+        if (animal.AnimalDiet == "Carnivore")
+        {
+            if (_animals.Count > 0) return false;
+
+            if (hasCarnivore) return false;
+
         }
         else
         {
-            return !Animals.Any(a => a.AnimalDiet == Animal.Diet.Carnivore && a.AnimalSize >= animal.AnimalSize);
+            foreach (Animal otherAnimal in _animals)
+            {
+                if (otherAnimal.AnimalDiet == "Carnivore" && (otherAnimal.AnimalSize == animal.AnimalSize || otherAnimal.AnimalSize == "Small"))
+                {
+                    return false;
+                }
+            }
         }
+        return true;
     }
 
     public void AddAnimal(Animal animal)
     {
         if (CanAddAnimal(animal))
         {
-            Animals.Add(animal);
+            _animals.Add(animal);
         }
     }
 }
