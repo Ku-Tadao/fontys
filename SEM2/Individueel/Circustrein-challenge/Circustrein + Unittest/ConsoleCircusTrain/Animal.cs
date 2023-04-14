@@ -3,6 +3,12 @@
     private string _animalDiet;
     private string _animalSize;
 
+    public Animal(string animalDiet, string animalSize)
+    {
+        AnimalDiet = animalDiet;
+        AnimalSize = animalSize;
+    }
+
     public string AnimalDiet
     {
         get => _animalDiet;

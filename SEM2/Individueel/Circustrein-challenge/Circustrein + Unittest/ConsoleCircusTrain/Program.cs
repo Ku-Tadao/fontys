@@ -8,13 +8,13 @@
 
         List<Animal> animals = new List<Animal>
         {
-            new() {AnimalDiet = "Carnivore", AnimalSize ="Large"},
-            new() {AnimalDiet = "Carnivore", AnimalSize ="Medium"},
-            new() {AnimalDiet = "Carnivore", AnimalSize ="Small"},
-            new() {AnimalDiet = "Herbivore", AnimalSize = "Large"},
-            new() {AnimalDiet = "Herbivore", AnimalSize = "Medium"},
-            new() {AnimalDiet = "Herbivore", AnimalSize = "Small"}
-    };
+            new(animalDiet: "Herbivore", animalSize: "Medium"),
+            new(animalDiet: "Carnivore", animalSize: "Large"),
+            new(animalDiet: "Carnivore", animalSize: "Medium"),
+            new(animalDiet: "Herbivore", animalSize: "Large"),
+            new(animalDiet: "Carnivore", animalSize: "Small"),
+            new(animalDiet: "Herbivore", animalSize: "Small")
+        };
 
         train.AddAnimals(animals);
 
