@@ -1,0 +1,8 @@
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.csproj.AssemblyReference.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.AssemblyInfoInputs.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.AssemblyInfo.cs
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.csproj.CoreCompileInputs.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.MvcApplicationPartsAssemblyInfo.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.RazorAssemblyInfo.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.RazorAssemblyInfo.cs

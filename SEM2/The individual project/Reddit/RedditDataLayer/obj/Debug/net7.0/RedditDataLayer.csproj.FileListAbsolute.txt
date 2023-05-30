@@ -1,0 +1,12 @@
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\bin\Debug\net7.0\RedditDataLayer.deps.json
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\bin\Debug\net7.0\RedditDataLayer.dll
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\bin\Debug\net7.0\RedditDataLayer.pdb
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.csproj.AssemblyReference.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.AssemblyInfoInputs.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.AssemblyInfo.cs
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.csproj.CoreCompileInputs.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.dll
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\refint\RedditDataLayer.dll
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\RedditDataLayer.pdb
+C:\fontys\SEM2\The individual project\Reddit\RedditDataLayer\obj\Debug\net7.0\ref\RedditDataLayer.dll
