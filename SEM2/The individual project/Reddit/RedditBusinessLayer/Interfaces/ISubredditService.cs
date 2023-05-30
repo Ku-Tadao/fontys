@@ -1,6 +1,10 @@
-﻿namespace RedditBusinessLayer.Interfaces;
+﻿using System.Collections.Generic;
+using RedditDataLayer.Entities;
 
-public interface ISubredditService
+namespace RedditBusinessLayer.Interfaces
 {
-    
+    public interface ISubredditService
+    {
+        List<Subreddit> GetSubreddits();
+    }
 }

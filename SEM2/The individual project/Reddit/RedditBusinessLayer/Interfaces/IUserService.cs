@@ -1,6 +1,10 @@
-﻿namespace RedditBusinessLayer.Interfaces;
+﻿using System.Collections.Generic;
+using RedditDataLayer.Entities;
 
-public interface IUserService
+namespace RedditBusinessLayer.Interfaces
 {
-    
+    public interface IUserService
+    {
+        List<User> GetUsers();
+    }
 }
