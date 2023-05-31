@@ -22,7 +22,7 @@ namespace RedditBusinessLayer.Services
             {
                 connection.Open();
 
-                using (var command = new SqlCommand("SELECT * FROM [User]", connection))
+                using (var command = new SqlCommand("SELECT * FROM Users", connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {

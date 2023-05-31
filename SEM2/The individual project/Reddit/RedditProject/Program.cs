@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<IPostService>(x => new PostService(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<ISubredditService>(x => new SubredditService(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<IUserService>(x => new UserService(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IPostService>(x => new PostService(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
+builder.Services.AddScoped<ISubredditService>(x => new SubredditService(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
+builder.Services.AddScoped<IUserService>(x => new UserService(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
 
 
 var app = builder.Build();

@@ -4,8 +4,11 @@
     "\\SEM2",
     "\\SEM2\\The Group Project",
     "\\SEM2\\The individual project",
-    "\\SEM2\\The individual project\\RedditProject Wrong"
+    "\\SEM2\\The individual project\\Reddit",
+    "\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer",
+    "\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\Services",
+    "\\SEM2\\The individual project\\Reddit\\RedditProject"
   ],
-  "SelectedNode": "\\SEM2\\The individual project\\RedditProject Wrong\\RedditProject.sln",
+  "SelectedNode": "\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\Services\\UserService.cs",
   "PreviewInSolutionExplorer": false
 }
