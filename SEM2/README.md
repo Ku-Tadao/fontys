@@ -122,3 +122,41 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
 </div>
+
+## UI Sketches
+<details><summary>Assignment</summary>
+A UI sketch can help gather requirements. By thinking about what the site looks like, you also force yourself to consider what functionality must be present to make that happen. Note that an outline should be mostly sketchy; that sounds obvious, but make sure it doesn't contain too much detail. It certainly shouldn't look too detailed either.
+
+  </details>
+
+<div align="center">
+<img src="/SEM2/The individual project/Docs/UI sketches/WireFrame Reddit Comment.png" alt="WireFrame Reddit Comment">
+<img src="/SEM2/The individual project/Docs/UI sketches/WireFrame Reddit Homepage.png" alt="WireFrame Reddit Homepage">
+<img src="/SEM2/The individual project/Docs/UI sketches/WireFrame Reddit Profile.png" alt="WireFrame Reddit Profile">
+</div>
+
+### Test Plan + Test Matrix
+<details><summary>Assignment</summary>
+Based on the requirements, you can often already come up with a number of scenarios that your application must meet. Both the 'happy flow', where you go through the steps as it should be, but also the error situations. For both of these scenarios you can invent a test to verify that your software works as intended. You can document these tests in a test plan and demonstrate that you cover your requirements with a test matrix.
+
+  </details>
+
+Test Case | Use Case(s) | Input | Expected Output
+--- | --- | --- | ---
+TC01 | FR-01 | Action: “Create account”, Username: “testuser”, Password: “password123” | Account created for “testuser”
+TC02 | FR-01 | Action: “Log in”, Username: “testuser”, Password: “password123” | User “testuser” logged in successfully
+TC03 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post”
+TC04 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users
+TC05 | FR-04 | Action: “Upvote post”, Post ID: 1 | Post with ID 1 upvoted
+TC06 | FR-05 | Action: “Comment on post”, Post ID: 1, Comment: “This is a test comment” | Comment added to post with ID 1
+TC07 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content
+TC08 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned
+TC09 | FR-08 | Action: “Run tests” | Tests executed and results reported
+
+Test Case	| FR-01	| B-01.1	| K-01.1	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1
+---	| ---	| ---	| ---	| ---	| ---	| ---	| ---	| ---	| ---
+TC01	| X	| X							
+TC02	| X	| X							
+TC03				| X	| X	| X			
+TC04								| X	| X
+TC05 - TC09	…	…	…	…	…	…	…	…	…	
