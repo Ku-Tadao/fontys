@@ -1,7 +1,7 @@
 # Reading Guide
 
-## Requirements Assignment
-<details><summary>Toggle me!</summary>
+### Reddit - Requirements
+<details><summary>Assignment</summary>
 Whether you are doing a small project on your own, or a large multidisciplinary project for a large company; everything depends on good requirements. Therefore, it is important to have an overview of what the application should do.
 
 Therefore, in consultation with the client (as in the pro task) or on your own (as in your individual project), you will create a list of functionalities and prioritize them. 
@@ -14,8 +14,7 @@ Requirements often have 3 elements:
 - Quality requirements (on a requirement): General requirements for the system, usually not a tightening of the behavior, but the way the behavior manifests itself (think sorting a view can be descending and ascending).
 
 </details>
-### Reddit - Requirements
-<details><summary>Toggle me!</summary>
+
 Look-Back at project description: In this project, I aim to create a replica of the popular social media platform Reddit. My platform will allow users to create an account and login securely, create new posts with text and/or media content, view a feed of posts from all users or from specific subreddits, upvote or downvote posts and comments, comment on posts and reply to other comments, edit or delete their own posts and comments, and connect to a relational database to store user data, posts, comments, and other relevant information.
 
 We have gathered and documented requirements for My project using various methods, including interviews with stakeholders, studying documentation, reverse engineering, prototyping, and focus groups. We have prioritized My requirements using the MoSCoW method and have organized them according to the FR (Functional Requirement), B (Beperking), and K (Kwaliteitseis) categories.
@@ -51,15 +50,13 @@ K = Kwaliteitseis
   - B-08.1: The development team regularly tests the software to identify and fix bugs and improve its overall quality.
   - K-08.1: The software must be reliable and free of critical bugs.
 
-  </details>
-## Use-cases Assignment
-<details><summary>Toggle me!</summary>
+
+### Reddit Use Cases
+<details><summary>Assignment</summary>
 
 The next step in developing the application is to create Use Cases based on the requirements. A Use Case describes "who" can do "what" with the system in question. Use Cases consist of a scenario description. The relationship between the Actors and their Use Cases can be represented in a Use Case diagram. Note that such a diagram is worthless without the descriptions.
 
   </details>
-### Reddit Use Cases
-<details><summary>Toggle me!</summary>
 
 Field | Description
 --- | ---
@@ -91,9 +88,8 @@ Scenario | - The actor navigates to the platform’s homepage or a specific subred
 Exceptions | None
 Result | The user can view a feed of posts from all users or from specific subreddits.
 
-  </details>
-## Context Diagram
-<details><summary>Toggle me!</summary>
+### Reddit Context Diagram
+<details><summary>Assignment</summary>
 
 A software application always runs in a certain context: A number of external systems and actors with which the application interacts. These include users, external APIs and other hardware or software. 
 
@@ -106,14 +102,12 @@ Additional information
 The C4 model provides an explanation of the Context diagramLinks to an external site.
 
   </details>
-### Reddit Context Diagram
-<details><summary>Toggle me!</summary>
 
 ![Context Diagram](The individual project/Docs/Context Diagram/V2 Context Diagram.jpg)
 
-  </details>
-## Conceptual Model
-<details><summary>Toggle me!</summary>
+
+### Reddit Conceptual Model
+<details><summary>Assignment</summary>
 
 In addition to an outline of the context, it also makes sense to create conceptual models early in the project to provide structure to the application domain. It serves as a talking picture with the customer and does not contain technical details, but uses "the language of the customer. Therefore, in it you do not yet make technical decisions such as "what type does each attribute have", "how do I then store this in the database" and "what behavior of the system comes in which entity".
 
@@ -123,9 +117,6 @@ In the SQL dictation (Chapter 2) Download SQL dictation (Chapter 2)there is info
 Once you have set up a Context diagram and a Conceptual model, you have a nice analysis of the outside world and the customer domain and can get to work translating these requirements into a technical solution.
 
   </details>
-### Reddit Conceptual Model
-<details><summary>Toggle me!</summary>
 
 ![Conceptual Model](The individual project/Docs/Conceptual model/V2 EER.jpg)
 
-  </details>
