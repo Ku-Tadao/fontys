@@ -154,9 +154,9 @@ TC08 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query ex
 TC09 | FR-08 | Action: “Run tests” | Tests executed and results reported
 
 Test Case	| FR-01	| B-01.1	| K-01.1	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1
----	| ---	| ---	| ---	| ---	| ---	| ---	| ---	| ---	| ---
-TC01	| X	| X							
-TC02	| X	| X							
+---			|---	| ---		| ---		| ---	| ---		| ---		| ---	| ---		| ---
+TC01		| X	| X							
+TC02	|||| X	| X							
 TC03				| X	| X	| X			
-TC04								| X	| X
-TC05 - TC09	…	…	…	…	…	…	…	…	…	
+TC04	|||||||							| X	| X
+TC05 - TC09	|…	|…	|…	|…	|…	|…	|…	|…	|…	
