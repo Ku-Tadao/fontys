@@ -1,6 +1,8 @@
 # Reading Guide
 
-### Reddit - Requirements
+## Analysis
+
+### Requirements
 <details><summary>Assignment</summary>
 Whether you are doing a small project on your own, or a large multidisciplinary project for a large company; everything depends on good requirements. Therefore, it is important to have an overview of what the application should do.
 
@@ -15,11 +17,11 @@ Requirements often have 3 elements:
 
 </details>
 
-Look-Back at project description: In this project, I aim to create a replica of the popular social media platform Reddit. My platform will allow users to create an account and login securely, create new posts with text and/or media content, view a feed of posts from all users or from specific subreddits, upvote or downvote posts and comments, comment on posts and reply to other comments, edit or delete their own posts and comments, and connect to a relational database to store user data, posts, comments, and other relevant information.
+In this project, the aim is to develop a replica of the popular social media platform Reddit. The platform will enable users to create secure accounts, login, and engage in various activities. Users will be able to create posts with text and/or media content, browse a feed of posts from all users or specific subreddits, upvote or downvote posts and comments, comment on posts and reply to other comments, as well as edit or delete their own posts and comments. To ensure data integrity, a relational database will be used to store user data, posts, comments, and other relevant information.
 
-We have gathered and documented requirements for My project using various methods, including interviews with stakeholders, studying documentation, reverse engineering, prototyping, and focus groups. We have prioritized My requirements using the MoSCoW method and have organized them according to the FR (Functional Requirement), B (Beperking), and K (Kwaliteitseis) categories.
+To gather and document the project requirements, a variety of methods have been employed, including stakeholder interviews, documentation study, reverse engineering, prototyping, and focus groups. The requirements have been prioritized using the MoSCoW method and categorized as Functional Requirements (FR), Constraints (B), and Quality Requirements (K).
 
-My project will adhere to industry best practices for software development and will implement standard techniques and tools for software quality assurance. We will regularly test My software to identify and fix bugs and improve its overall quality. My goal is to deliver a reliable and user-friendly platform that meets the needs of My stakeholders.
+Throughout the development process, industry best practices for software development will be followed. Standard techniques and tools for software quality assurance will be implemented to ensure the reliability and usability of the platform. Regular testing will be conducted to identify and address any bugs, enhancing the overall quality of the software. The ultimate goal is to deliver a platform that meets the needs of the stakeholders, providing a dependable and user-friendly experience.
 
 FR = Functional Requirement
 B = Beperking
@@ -51,7 +53,7 @@ K = Kwaliteitseis
   - K-08.1: The software must be reliable and free of critical bugs.
 
 
-### Reddit Use Cases
+### Use Cases
 <details><summary>Assignment</summary>
 
 The next step in developing the application is to create Use Cases based on the requirements. A Use Case describes "who" can do "what" with the system in question. Use Cases consist of a scenario description. The relationship between the Actors and their Use Cases can be represented in a Use Case diagram. Note that such a diagram is worthless without the descriptions.
@@ -88,7 +90,7 @@ Scenario | - The actor navigates to the platform’s homepage or a specific subred
 Exceptions | None
 Result | The user can view a feed of posts from all users or from specific subreddits.
 
-### Reddit Context Diagram
+### Context Diagram
 <details><summary>Assignment</summary>
 
 A software application always runs in a certain context: A number of external systems and actors with which the application interacts. These include users, external APIs and other hardware or software. 
@@ -107,7 +109,7 @@ The C4 model provides an explanation of the Context diagramLinks to an external 
 <img src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
 </div>
 
-### Reddit Conceptual Model
+### Conceptual Model
 <details><summary>Assignment</summary>
 
 In addition to an outline of the context, it also makes sense to create conceptual models early in the project to provide structure to the application domain. It serves as a talking picture with the customer and does not contain technical details, but uses "the language of the customer. Therefore, in it you do not yet make technical decisions such as "what type does each attribute have", "how do I then store this in the database" and "what behavior of the system comes in which entity".
@@ -156,7 +158,81 @@ TC09 | FR-08 | Action: “Run tests” | Tests executed and results reported
 Test Case	| FR-01	| B-01.1	| K-01.1	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1
 ---			|---	| ---		| ---		| ---	| ---		| ---		| ---	| ---		| ---
 TC01		| X	| X							
-TC02	 X	| X							
+TC02	| X	| X							
 TC03	||||			| X	| X	| X			
 TC04	|||||||							| X	| X
 TC05 - TC09	|…	|…	|…	|…	|…	|…	|…	|…	|…	
+
+
+## Design
+
+### Architecture: Multilayered Architecture
+<details><summary>Assignment</summary>
+The architecture of a software system provides an abstract description, often presented through an architecture diagram, of the logical components and their relationships within the application. It plays a crucial role in defining the main responsibilities of the application and influencing the organization of the codebase.
+
+The choice of architecture is often driven by the specific requirements of the application. Factors such as scalability, deployment ease, development speed, testability, and performance heavily influence the architectural decisions. Each of these considerations impacts the overall design.
+
+One example of a commonly used architecture is the multilayer architecture, also known as layered or N-tier architecture. It involves dividing the application into distinct components or layers, each responsible for specific functions, including:
+
+1. Presentation (View/UI): Handles the interaction between users and the application.
+2. Application (Logic/Business): Implements the core behavior and functionality of the application.
+3. Persistence (DAL - Data Access Layer): Manages the connection between the application and the chosen data storage method.
+4. Domain (Model): Represents the data containers used by the application.
+5. ApiWrapper: Facilitates the integration between the application and external APIs.
+6. Hardware Abstraction Layer (HAL): Establishes the communication between the application and external hardware.
+
+When designing the architecture, you determine the necessary components and define their connections. The analysis, particularly the contextual understanding of the project, serves as valuable input in this decision-making process. In your design document, you should provide an explanation justifying the chosen architecture based on its suitability for the project's requirements.
+
+  </details>
+
+This is a work in progress, i'm currently working on a Solution that has the Business, Data and Presentation layer, with the Domain model within the core of the application.
+(Image still requires designing) 
+<a href="/SEM2/The individual project/Reddit">Review the Solution</a>
+Access the <a href="/SEM2/The individual project/Reddit/RedditProject">RedditProject</a> to open the Solution in Visual Studio (or your prefered IDE)
+
+### Architecture: Multilayered Architecture
+<details><summary>Assignment</summary>
+The architecture of a software system provides an abstract description, often presented through an architecture diagram, of the logical components and their relationships within the application. It plays a crucial role in defining the main responsibilities of the application and influencing the organization of the codebase.
+
+The choice of architecture is often driven by the specific requirements of the application. Factors such as scalability, deployment ease, development speed, testability, and performance heavily influence the architectural decisions. Each of these considerations impacts the overall design.
+
+One example of a commonly used architecture is the multilayer architecture, also known as layered or N-tier architecture. It involves dividing the application into distinct components or layers, each responsible for specific functions, including:
+
+1. Presentation (View/UI): Handles the interaction between users and the application.
+2. Application (Logic/Business): Implements the core behavior and functionality of the application.
+3. Persistence (DAL - Data Access Layer): Manages the connection between the application and the chosen data storage method.
+4. Domain (Model): Represents the data containers used by the application.
+5. ApiWrapper: Facilitates the integration between the application and external APIs.
+6. Hardware Abstraction Layer (HAL): Establishes the communication between the application and external hardware.
+
+When designing the architecture, you determine the necessary components and define their connections. The analysis, particularly the contextual understanding of the project, serves as valuable input in this decision-making process. In your design document, you should provide an explanation justifying the chosen architecture based on its suitability for the project's requirements.
+
+  </details>
+
+This is a work in progress, i'm currently working on a Solution that has the Business, Data and Presentation layer, with the Domain model within the core of the application.
+(Image still requires designing) 
+<a href="/SEM2/The individual project/Reddit">Review the Solution</a>
+Access the <a href="/SEM2/The individual project/Reddit/RedditProject">RedditProject</a> to open the Solution in Visual Studio (or your prefered IDE)
+
+
+### Domain models, class diagrams and database design
+<details><summary>Assignment</summary>
+A class diagram shows the overview of the classes in a system, as well as the relationships between them. For each class, the name as well as the attributes and methods are displayed. These diagrams are used to model the static structure of your software.
+
+By creating class diagrams, you are able to discuss and validate your design with your colleagues before you even begin programming. These diagrams are the standard way to define the design of your system.
+
+Eventually, you will also start storing things in a database (this is one of the learning outcomes). Try to think, based on your domain model, what tables you are going to need and what the relationships are between them. Your DBMS (DataBase Mangement System) will enforce these relationships if you put keys (primary and foreign keys) on the right fields. There are also technical limitations on the data types you can store in your DBMS. These are also reflected in your Database design.
+
+  </details>
+
+**This is a work in progress.**
+Domain Model:
+Non Existent as of now.
+
+Entity Relationship Diagram:
+<div align="center">
+<img src="/SEM2/The individual project/Docs/Conceptual model/ERD1.png" alt="Entity Relationship Diagram">
+</div>
+
+## Testing
+**Unittest (automatic) and Acceptance testing arae not ready yet**
