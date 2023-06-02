@@ -190,31 +190,6 @@ This is a work in progress, i'm currently working on a Solution that has the Bus
 <a href="/SEM2/The individual project/Reddit">Review the Solution</a>
 Access the <a href="/SEM2/The individual project/Reddit/RedditProject">RedditProject</a> to open the Solution in Visual Studio (or your prefered IDE)
 
-### Architecture: Multilayered Architecture
-<details><summary>Assignment</summary>
-The architecture of a software system provides an abstract description, often presented through an architecture diagram, of the logical components and their relationships within the application. It plays a crucial role in defining the main responsibilities of the application and influencing the organization of the codebase.
-
-The choice of architecture is often driven by the specific requirements of the application. Factors such as scalability, deployment ease, development speed, testability, and performance heavily influence the architectural decisions. Each of these considerations impacts the overall design.
-
-One example of a commonly used architecture is the multilayer architecture, also known as layered or N-tier architecture. It involves dividing the application into distinct components or layers, each responsible for specific functions, including:
-
-1. Presentation (View/UI): Handles the interaction between users and the application.
-2. Application (Logic/Business): Implements the core behavior and functionality of the application.
-3. Persistence (DAL - Data Access Layer): Manages the connection between the application and the chosen data storage method.
-4. Domain (Model): Represents the data containers used by the application.
-5. ApiWrapper: Facilitates the integration between the application and external APIs.
-6. Hardware Abstraction Layer (HAL): Establishes the communication between the application and external hardware.
-
-When designing the architecture, you determine the necessary components and define their connections. The analysis, particularly the contextual understanding of the project, serves as valuable input in this decision-making process. In your design document, you should provide an explanation justifying the chosen architecture based on its suitability for the project's requirements.
-
-  </details>
-
-This is a work in progress, i'm currently working on a Solution that has the Business, Data and Presentation layer, with the Domain model within the core of the application.
-(Image still requires designing) 
-<a href="/SEM2/The individual project/Reddit">Review the Solution</a>
-Access the <a href="/SEM2/The individual project/Reddit/RedditProject">RedditProject</a> to open the Solution in Visual Studio (or your prefered IDE)
-
-
 ### Domain models, class diagrams and database design
 <details><summary>Assignment</summary>
 A class diagram shows the overview of the classes in a system, as well as the relationships between them. For each class, the name as well as the attributes and methods are displayed. These diagrams are used to model the static structure of your software.
@@ -225,9 +200,8 @@ Eventually, you will also start storing things in a database (this is one of the
 
   </details>
 
-**This is a work in progress.**
-Domain Model:
-Non Existent as of now.
+**This is a work in progress.**<br>
+Domain Model is Non Existent as of now.
 
 Entity Relationship Diagram:
 <div align="center">
@@ -235,4 +209,4 @@ Entity Relationship Diagram:
 </div>
 
 ## Testing
-**Unittest (automatic) and Acceptance testing arae not ready yet**
+**Unittest (automatic) and Acceptance testing are not ready yet**
