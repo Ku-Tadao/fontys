@@ -103,7 +103,7 @@ The C4 model provides an explanation of the Context diagramLinks to an external 
 
   </details>
 
-![Context Diagram](The individual project/Docs/Context Diagram/V2 Context Diagram.jpg)
+<img src="/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
 
 
 ### Reddit Conceptual Model
@@ -118,5 +118,5 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 
   </details>
 
-![Conceptual Model](The individual project/Docs/Conceptual model/V2 EER.jpg)
+<img src="/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
 
