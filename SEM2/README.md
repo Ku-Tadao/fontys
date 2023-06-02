@@ -103,8 +103,9 @@ The C4 model provides an explanation of the Context diagramLinks to an external 
 
   </details>
 
-<img align="center" src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
-
+<div align="center">
+<img src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
+</div>
 
 ### Reddit Conceptual Model
 <details><summary>Assignment</summary>
@@ -118,4 +119,6 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 
   </details>
 
-<img align="center" src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
+<div align="center">
+<img src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
+</div>
