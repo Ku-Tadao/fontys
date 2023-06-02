@@ -1,16 +1,16 @@
 # Reading Guide
 
 ## Requirements Assignment
-Of je nu een klein project in je eentje doet, of een groot multidisciplinair project voor een groot bedrijf; alles staat of valt bij goede requirements. Daarom is het van belang een overzicht te hebben wat de applicatie moet gaan doen.
+Whether you are doing a small project on your own, or a large multidisciplinary project for a large company; everything depends on good requirements. Therefore, it is important to have an overview of what the application should do.
 
-Daarom ga je in overleg met de opdrachtgever (zoals in de proftaak) of op jezelf (zoals in je individuele project) een lijst van functionaliteiten opstellen en deze prioriteren. 
+Therefore, in consultation with the client (as in the pro task) or on your own (as in your individual project), you will create a list of functionalities and prioritize them. 
 
-N.B. Kijk ook terug naar je one-slide idea en projectbeschrijving. Als het goed is heb je daar beschreven wat het doel is van je project. Dit is het goed startpunt voor het nadenken en opstellen van je requirements.
+N.B. Also look back at your one-slide idea and project description. If all goes well, you have described there what the goal of your project is. This is the good starting point for thinking and drafting your requirements.
 
-Requirements hebben vaak 3 elementen:
-- Requirement: Het gedrag wat het systeem moet vertonen
-- Beperkingen (op een requirement): Verdere verscherping van het observeerbare gedrag van het systeem (denk aan beperkingen aan invoer, zaken die wel of niet mogen)
-- Kwaliteitseisen (op een requirement): Algemene eisen aan het systeem, meestal geen verscherping van het gedrag, maar de manier waarop het gedrag zich manifesteert (denk aan sorteren van een overzicht kan aflopend en oplopend).
+Requirements often have 3 elements:
+- Requirement: The behavior the system must exhibit.
+- Constraints (on a requirement): Further tightening of the observable behavior of the system (think restrictions on input, things that are or are not allowed)
+- Quality requirements (on a requirement): General requirements for the system, usually not a tightening of the behavior, but the way the behavior manifests itself (think sorting a view can be descending and ascending).
 
 ### Reddit - Requirements
 Look-Back at project description: In this project, I aim to create a replica of the popular social media platform Reddit. My platform will allow users to create an account and login securely, create new posts with text and/or media content, view a feed of posts from all users or from specific subreddits, upvote or downvote posts and comments, comment on posts and reply to other comments, edit or delete their own posts and comments, and connect to a relational database to store user data, posts, comments, and other relevant information.
@@ -49,7 +49,7 @@ K = Kwaliteitseis
   - K-08.1: The software must be reliable and free of critical bugs.
 
 ## Use-cases Assignment
-De volgende stap in het ontwikkelen van de applicatie is om op basis van de requirements Use Cases te maken. Een Use Case beschrijft “wie” met het betreffende systeem “wat” kan doen. Use Cases bestaan uit een scenariobeschrijving. De relatie tussen de Actoren en hun Use-Cases kunnen in een Use-Casediagram worden weergegeven. Let er op dat zo'n diagram waardeloos is zonder de beschrijvingen.
+The next step in developing the application is to create Use Cases based on the requirements. A Use Case describes "who" can do "what" with the system in question. Use Cases consist of a scenario description. The relationship between the Actors and their Use Cases can be represented in a Use Case diagram. Note that such a diagram is worthless without the descriptions.
 
 ### Reddit Use Cases
 Field | Description
@@ -83,23 +83,26 @@ Exceptions | None
 Result | The user can view a feed of posts from all users or from specific subreddits.
 
 ## Context Diagram
-Een software applicatie draait altijd in een bepaalde context: Een aantal externe systemen en actoren waarmee de applicatie interacteert. Hierbij kun je onder andere denken aan gebruikers, externe API's en andere hardware of software. 
+A software application always runs in a certain context: A number of external systems and actors with which the application interacts. These include users, external APIs and other hardware or software. 
 
-Om een eerste idee te geven hoe op hoofdlijnen de software eruit zou kunnen gaan zien, kun je hiervoor een contextdiagram maken. Hierbij beschouw je je applicatie als black-box en ga je bekijken met welke andere zaken de applicatie samenwerkt. 
+To give a first idea of what the software might look like, you can make a context diagram for this purpose. Here you consider your application as a black-box and start looking at what other things the application interacts with. 
 
-![Context Diagram](SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg)
 
-Als je deze context hebt, dan is een dergelijk diagram in te zetten als input voor requirements of user stories, en geeft bijvoorbeeld een overzicht van de actoren van het systeem. In het ontwerp kan een contextdiagram ook gebruikt worden als basis voor de software architectuur.
+If you have this context, then such a diagram can be used as input for requirements or user stories, and gives, for example, an overview of the actors of the system. In design, a context diagram can also be used as a basis for the software architecture.
 
-Extra informatie
-Het C4-model geeft een uitleg van het ContextdiagramLinks to an external site.
+Additional information
+The C4 model provides an explanation of the Context diagramLinks to an external site.
+
+### Reddit Context Diagram
+![Context Diagram](../The individual project/Docs/Context Diagram/V2 Context Diagram.jpg)
 
 ## Conceptual Model
-Naast een schets van de context is ook zinvol om vroeg in het project conceptueel model te maken om structuur aan te brengen in het domein van de applicatie. Het dient als praatplaatje met de klant en bevat geen technische details, maar gebruikt 'de taal van de klant'. Daarom neem je hierin nog geen technische beslissingen als "welk type heeft elk attribuut", "hoe sla ik dit dan op in de database" en "welk gedrag van het systeem komt in welke entiteit".
+In addition to an outline of the context, it also makes sense to create conceptual models early in the project to provide structure to the application domain. It serves as a talking picture with the customer and does not contain technical details, but uses "the language of the customer. Therefore, in it you do not yet make technical decisions such as "what type does each attribute have", "how do I then store this in the database" and "what behavior of the system comes in which entity".
 
-Het conceptueel model bevat dan dus ook alleen entiteiten, relaties en de belangrijkste attributen voor de applicaite.
+Therefore, the conceptual model contains only entities, relationships and the most important attributes for the applicaite.
 
-![Conceptual Model](SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg)
+In the SQL dictation (Chapter 2) Download SQL dictation (Chapter 2)there is information about setting up a conceptual model.
+Once you have set up a Context diagram and a Conceptual model, you have a nice analysis of the outside world and the customer domain and can get to work translating these requirements into a technical solution.
 
-In het SQL dictaat (hoofdstuk 2) Download SQL dictaat (hoofdstuk 2)is informatie te vinden over het opzetten van een conceptueel model.
-Als je een Context-diagram en een Conceptueel-model hebt opgesteld, heb je een aardige analyse van de buitenwereld en het klantdomein en kun je aan de slag met het vertalen van deze eisen naar een technische oplossing.
+### Reddit Conceptual Model
+![Conceptual Model](../The individual project/Docs/Conceptual model/V2 EER.jpg)
