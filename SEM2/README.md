@@ -1,4 +1,3 @@
-<div align="center">
 # Reading Guide
 
 ### Reddit - Requirements
@@ -104,7 +103,7 @@ The C4 model provides an explanation of the Context diagramLinks to an external 
 
   </details>
 
-<img src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
+<img align="center" src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
 
 
 ### Reddit Conceptual Model
@@ -119,6 +118,4 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 
   </details>
 
-<img src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
-
-</div>
+<img align="center" src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
