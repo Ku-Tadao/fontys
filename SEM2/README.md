@@ -1,3 +1,4 @@
+<div align="center">
 # Reading Guide
 
 ### Reddit - Requirements
@@ -120,3 +121,4 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 
 <img src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
 
+</div>
