@@ -2,45 +2,36 @@
 using System.Collections.Generic;
 using RedditDataLayer.Entities;
 using RedditBusinessLayer.Interfaces;
+using RedditDataLayer;
 
 namespace RedditBusinessLayer.Services
 {
     public class SubredditService : ISubredditService
     {
-        private readonly string _connectionString;
+        private readonly DatabaseHelper _databaseHelper;
 
-        public SubredditService(string connectionString)
+        public SubredditService(DatabaseHelper databaseHelper)
         {
-            _connectionString = connectionString;
+            _databaseHelper = databaseHelper;
+        }
+
+        public void UpdateSubrxeddit(int subredditId, string newName, string newDescription)
+        {
+            // Retrieve the subreddit from the database
+            var subreddit = _databaseHelper.GetSubredditById(subredditId);
+
+            // Update the subreddit using the new methods
+            subreddit?.UpdateName(newName);
+            subreddit?.UpdateDescription(newDescription);
+
+            // Save the changes to the database
+            _databaseHelper.UpdateSubreddit(subreddit);
         }
 
         public List<Subreddit> GetSubreddits()
         {
-            var subreddits = new List<Subreddit>();
-
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-
-                using (var command = new SqlCommand("SELECT * FROM Subreddits", connection))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            var subreddit = new Subreddit
-                            {
-                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                                Name = reader.GetString(reader.GetOrdinal("Name")),
-                                Description = reader.GetString(reader.GetOrdinal("Description"))
-                            };
-                            subreddits.Add(subreddit);
-                        }
-                    }
-                }
-            }
-
-            return subreddits;
+            return _databaseHelper.GetSubreddits();
         }
     }
+
 }

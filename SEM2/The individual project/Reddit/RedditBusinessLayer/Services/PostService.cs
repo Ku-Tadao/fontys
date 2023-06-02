@@ -2,48 +2,36 @@
 using System.Collections.Generic;
 using RedditDataLayer.Entities;
 using RedditBusinessLayer.Interfaces;
+using RedditDataLayer;
 
 namespace RedditBusinessLayer.Services
 {
     public class PostService : IPostService
     {
-        private readonly string _connectionString;
+        private readonly DatabaseHelper _databaseHelper;
 
-        public PostService(string connectionString)
+        public PostService(DatabaseHelper databaseHelper)
         {
-            _connectionString = connectionString;
+            _databaseHelper = databaseHelper;
+        }
+
+        public void UpdatePost(int postId, string newTitle, string newContent)
+        {
+            // Retrieve the post from the database
+            var post = _databaseHelper.GetPostById(postId);
+
+            // Update the post using the new methods
+            post?.UpdateTitle(newTitle);
+            post?.UpdateContent(newContent);
+
+            // Save the changes to the database
+            _databaseHelper.UpdatePost(post);
         }
 
         public List<Post> GetPosts()
         {
-            var posts = new List<Post>();
-
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-
-                using (var command = new SqlCommand("SELECT * FROM Posts", connection))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            var post = new Post
-                            {
-                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                                Title = reader.GetString(reader.GetOrdinal("Title")),
-                                Content = reader.GetString(reader.GetOrdinal("Content")),
-                                DateCreated = reader.GetDateTime(reader.GetOrdinal("DateCreated")),
-                                UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
-                                SubredditId = reader.GetInt32(reader.GetOrdinal("SubredditId"))
-                            };
-                            posts.Add(post);
-                        }
-                    }
-                }
-            }
-
-            return posts;
+            return _databaseHelper.GetPosts();
         }
+
     }
 }

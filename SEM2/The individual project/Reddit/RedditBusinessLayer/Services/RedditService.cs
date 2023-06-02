@@ -28,15 +28,14 @@ namespace RedditBusinessLayer.Services
                     {
                         while (reader.Read())
                         {
-                            var post = new Post
-                            {
-                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                                Title = reader.GetString(reader.GetOrdinal("Title")),
-                                Content = reader.GetString(reader.GetOrdinal("Content")),
-                                DateCreated = reader.GetDateTime(reader.GetOrdinal("DateCreated")),
-                                UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
-                                SubredditId = reader.GetInt32(reader.GetOrdinal("SubredditId"))
-                            };
+                            var post = new Post(
+                                reader.GetInt32(reader.GetOrdinal("Id")),
+                                reader.GetString(reader.GetOrdinal("Title")),
+                                reader.GetString(reader.GetOrdinal("Content")),
+                                reader.GetDateTime(reader.GetOrdinal("DateCreated")),
+                                reader.GetInt32(reader.GetOrdinal("UserId")),
+                                reader.GetInt32(reader.GetOrdinal("SubredditId"))
+                            ); ;
                             posts.Add(post);
                         }
                     }

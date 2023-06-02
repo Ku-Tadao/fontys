@@ -2,46 +2,36 @@
 using System.Collections.Generic;
 using RedditDataLayer.Entities;
 using RedditBusinessLayer.Interfaces;
+using RedditDataLayer;
 
 namespace RedditBusinessLayer.Services
 {
     public class UserService : IUserService
     {
-        private readonly string _connectionString;
+        private readonly DatabaseHelper _databaseHelper;
 
-        public UserService(string connectionString)
+        public UserService(DatabaseHelper databaseHelper)
         {
-            _connectionString = connectionString;
+            _databaseHelper = databaseHelper;
+        }
+
+        public void UpdateUser(int userId, string newUsername, string newPassword, string newEmail)
+        {
+            // Retrieve the user from the database
+            var user = _databaseHelper.GetUserById(userId);
+
+            // Update the user using the new methods
+            user?.UpdateUsername(newUsername);
+            user?.UpdatePassword(newPassword);
+            user?.UpdateEmail(newEmail);
+
+            // Save the changes to the database
+            _databaseHelper.UpdateUser(user);
         }
 
         public List<User> GetUsers()
         {
-            var users = new List<User>();
-
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-
-                using (var command = new SqlCommand("SELECT * FROM Users", connection))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            var user = new User
-                            {
-                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                                Username = reader.GetString(reader.GetOrdinal("Username")),
-                                Password = reader.GetString(reader.GetOrdinal("Password")),
-                                Email = reader.GetString(reader.GetOrdinal("Email"))
-                            };
-                            users.Add(user);
-                        }
-                    }
-                }
-            }
-
-            return users;
+            return _databaseHelper.GetUsers();
         }
     }
 }

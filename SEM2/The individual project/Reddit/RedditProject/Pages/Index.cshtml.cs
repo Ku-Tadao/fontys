@@ -19,9 +19,9 @@ namespace RedditProject.Pages
             _userService = userService;
         }
 
-        public List<Post> Posts { get; set; }
-        public List<Subreddit> Subreddits { get; set; }
-        public List<User> Users { get; set; }
+        public List<Post>? Posts { get; set; }
+        public List<Subreddit>? Subreddits { get; set; }
+        public List<User>? Users { get; set; }
 
         public void OnGet()
         {
@@ -30,4 +30,5 @@ namespace RedditProject.Pages
             Users = _userService.GetUsers();
         }
     }
+
 }

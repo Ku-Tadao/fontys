@@ -1,14 +1,18 @@
 using RedditBusinessLayer.Interfaces;
 using RedditBusinessLayer.Services;
+using RedditDataLayer;
+using RedditDataLayer.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<IPostService>(x => new PostService(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
-builder.Services.AddScoped<ISubredditService>(x => new SubredditService(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
-builder.Services.AddScoped<IUserService>(x => new UserService(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
+builder.Services.AddScoped(x => new DatabaseHelper(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException()));
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ISubredditService, SubredditService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
 
 
 var app = builder.Build();
