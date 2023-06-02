@@ -1,5 +1,19 @@
 # Reading Guide
 
+## Table of Contents
+- [Reading Guide](#reading-guide)
+  - [Analysis](#analysis)
+    - [Requirements](#requirements)
+    - [Use Cases](#use-cases)
+    - [Context Diagram](#context-diagram)
+    - [Conceptual Model](#conceptual-model)
+    - [UI Sketches](#ui-sketches)
+    - [Test Plan + Test Matrix](#test-plan--test-matrix)
+  - [Design](#design)
+    - [Architecture: Multilayered Architecture](#architecture-multilayered-architecture)
+    - [Domain models, class diagrams and database design](#domain-models-class-diagrams-and-database-design)
+  - [Testing](#testing)
+
 ## Analysis
 
 ### Requirements
