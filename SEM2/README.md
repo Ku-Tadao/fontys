@@ -94,7 +94,7 @@ Additional information
 The C4 model provides an explanation of the Context diagramLinks to an external site.
 
 ### Reddit Context Diagram
-![Context Diagram](../The individual project/Docs/Context Diagram/V2 Context Diagram.jpg)
+![Context Diagram](SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg)
 
 ## Conceptual Model
 In addition to an outline of the context, it also makes sense to create conceptual models early in the project to provide structure to the application domain. It serves as a talking picture with the customer and does not contain technical details, but uses "the language of the customer. Therefore, in it you do not yet make technical decisions such as "what type does each attribute have", "how do I then store this in the database" and "what behavior of the system comes in which entity".
@@ -105,4 +105,4 @@ In the SQL dictation (Chapter 2) Download SQL dictation (Chapter 2)there is info
 Once you have set up a Context diagram and a Conceptual model, you have a nice analysis of the outside world and the customer domain and can get to work translating these requirements into a technical solution.
 
 ### Reddit Conceptual Model
-![Conceptual Model](../The individual project/Docs/Conceptual model/V2 EER.jpg)
+![Conceptual Model](SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg)
