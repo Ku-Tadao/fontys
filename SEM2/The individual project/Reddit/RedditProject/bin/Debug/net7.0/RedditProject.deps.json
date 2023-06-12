@@ -9,6 +9,7 @@
       "RedditProject/1.0.0": {
         "dependencies": {
           "RedditBusinessLayer": "1.0.0",
+          "RedditDataLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
@@ -92,7 +93,6 @@
       "System.Security.Principal.Windows/4.7.0": {},
       "RedditBusinessLayer/1.0.0": {
         "dependencies": {
-          "RedditDataLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
@@ -101,6 +101,7 @@
       },
       "RedditDataLayer/1.0.0": {
         "dependencies": {
+          "RedditBusinessLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {

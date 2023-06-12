@@ -1,0 +1,197 @@
+@startuml
+class "AddScoped`2"<T1,T2> {
+}
+class UnitTest1 {
+    + Test1() : void
+}
+class Comment {
+    + Comment(id:int, content:string, dateCreated:DateTime, userId:int, postId:int)
+    + Id : int <<get>> <<set>>
+    + Content : string <<get>>
+    + UserId : int <<get>> <<set>>
+    + PostId : int <<get>> <<set>>
+    + UpdateContent(newContent:string) : void
+}
+Comment --> "DateCreated" DateTime
+class Post {
+    + Post(id:int, title:string, content:string, dateCreated:DateTime, userId:int, subredditId:int)
+    + Id : int <<get>> <<set>>
+    + Title : string <<get>>
+    + Content : string <<get>>
+    + UserId : int <<get>> <<set>>
+    + SubredditId : int <<get>> <<set>>
+    + UpdateTitle(newTitle:string) : void
+    + UpdateContent(newContent:string) : void
+}
+Post --> "DateCreated" DateTime
+Post --> "Subreddit" Subreddit
+Post --> "User" User
+class Subreddit {
+    + Subreddit(id:int, name:string, description:string)
+    + Id : int <<get>> <<set>>
+    + Name : string <<get>>
+    + Description : string <<get>>
+    + UpdateName(newName:string) : void
+    + UpdateDescription(newDescription:string) : void
+}
+class "List`1"<T> {
+}
+Subreddit --> "Posts<Post>" "List`1"
+class User {
+    + User(id:int, username:string, password:string, email:string)
+    + Id : int <<get>> <<set>>
+    + Username : string <<get>>
+    + Password : string <<get>>
+    + Email : string <<get>>
+    + UpdateUsername(newUsername:string) : void
+    + UpdatePassword(newPassword:string) : void
+    + UpdateEmail(newEmail:string) : void
+}
+interface IPostRepository {
+    GetPosts() : List<Post>
+    GetPostsBySubredditId(subredditId:int) : List<Post>
+    GetPostsWithSubredditAndUser() : List<Post>
+    GetPostById(postId:int) : Post
+    UpdatePost(post:Post) : void
+    CreatePost(post:Post) : void
+    DeletePost(post:Post) : void
+}
+interface ISubredditRepository {
+    GetSubreddits() : List<Subreddit>
+    GetSubredditById(subredditId:int) : Subreddit
+    UpdateSubreddit(subreddit:Subreddit) : void
+}
+interface IUserRepository {
+    GetUsers() : List<User>
+    GetUserById(userId:int) : User
+    UpdateUser(user:User) : void
+}
+class PostService {
+    + PostService(postRepository:IPostRepository)
+    + GetPosts() : List<Post>
+    + GetPostById(postId:int) : Post
+    + UpdatePost(postId:int, newTitle:string, newContent:string) : void
+}
+PostService --> "_postRepository" IPostRepository
+class RedditService {
+    + RedditService(postRepository:IPostRepository, subredditRepository:ISubredditRepository, userRepository:IUserRepository)
+    + GetPosts() : List<Post>
+    + GetSubreddits() : List<Subreddit>
+    + GetUsers() : List<User>
+}
+RedditService --> "_postRepository" IPostRepository
+RedditService --> "_subredditRepository" ISubredditRepository
+RedditService --> "_userRepository" IUserRepository
+class SubredditService {
+    + SubredditService(subredditRepository:ISubredditRepository)
+    + GetSubredditById(subredditId:int) : Subreddit
+    + GetSubreddits() : List<Subreddit>
+    + UpdateSubreddit(subreddit:Subreddit) : void
+}
+SubredditService --> "_subredditRepository" ISubredditRepository
+class UserService {
+    + UserService(userRepository:IUserRepository)
+    + GetUsers() : List<User>
+    + GetUserById(userId:int) : User
+    + UpdateUser(userId:int, newUsername:string, newPassword:string, newEmail:string) : void
+}
+UserService --> "_userRepository" IUserRepository
+class PostRepository {
+    - <<readonly>> _connectionString : string
+    + PostRepository(connectionString:string)
+    + GetPosts() : List<Post>
+    + GetPostById(postId:int) : Post
+    + GetPostsBySubredditId(subredditId:int) : List<Post>
+    + UpdatePost(post:Post) : void
+    + CreatePost(post:Post) : void
+    + DeletePost(post:Post) : void
+    + GetPostsWithSubredditAndUser() : List<Post>
+}
+IPostRepository <|-- PostRepository
+class SubredditRepository {
+    - <<readonly>> _connectionString : string
+    + SubredditRepository(connectionString:string)
+    + GetSubreddits() : List<Subreddit>
+    + GetSubredditById(subredditId:int) : Subreddit
+    + UpdateSubreddit(subreddit:Subreddit) : void
+}
+ISubredditRepository <|-- SubredditRepository
+class UserRepository {
+    - <<readonly>> _connectionString : string
+    + UserRepository(connectionString:string)
+    + GetUsers() : List<User>
+    + GetUserById(userId:int) : User
+    + UpdateUser(user:User) : void
+}
+IUserRepository <|-- UserRepository
+class CreatePostModel {
+    + CreatePostModel(postRepository:IPostRepository, subredditRepository:ISubredditRepository)
+    + Title : string <<get>> <<set>>
+    + Content : string <<get>> <<set>>
+    + SubredditId : int <<get>> <<set>>
+    + OnGet() : void
+    + OnPost() : IActionResult
+}
+PageModel <|-- CreatePostModel
+CreatePostModel --> "_postRepository" IPostRepository
+CreatePostModel --> "_subredditRepository" ISubredditRepository
+CreatePostModel --> "SubredditSelectList" SelectList
+class DeletePostModel {
+    + DeletePostModel(postRepository:IPostRepository)
+    + Id : int <<get>> <<set>>
+    + OnGet(id:int) : void
+    + OnPost() : IActionResult
+}
+PageModel <|-- DeletePostModel
+DeletePostModel --> "_postRepository" IPostRepository
+class EditPostModel {
+    + EditPostModel(postRepository:IPostRepository)
+    + Id : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + Content : string <<get>> <<set>>
+    + OnGet(id:int) : void
+    + OnPost() : IActionResult
+}
+PageModel <|-- EditPostModel
+EditPostModel --> "_postRepository" IPostRepository
+class ErrorModel {
+    + RequestId : string? <<get>> <<set>>
+    + ShowRequestId : bool <<get>>
+    + ErrorModel(logger:ILogger<ErrorModel>)
+    + OnGet() : void
+}
+class "ILogger`1"<T> {
+}
+PageModel <|-- ErrorModel
+ErrorModel --> "_logger<ErrorModel>" "ILogger`1"
+class IndexModel {
+    + IndexModel(subredditRepository:ISubredditRepository, postRepository:IPostRepository)
+    + OnGet() : void
+}
+class "List`1"<T> {
+}
+PageModel <|-- IndexModel
+IndexModel --> "_subredditRepository" ISubredditRepository
+IndexModel --> "_postRepository" IPostRepository
+IndexModel --> "Subreddits<Subreddit>" "List`1"
+class PostsModel {
+    + PostsModel(postRepository:IPostRepository)
+    + OnGet() : void
+}
+class "List`1"<T> {
+}
+PageModel <|-- PostsModel
+PostsModel --> "_postRepository" IPostRepository
+PostsModel --> "Posts<Post>" "List`1"
+class SubredditModel {
+    + SubredditModel(subredditRepository:ISubredditRepository, postRepository:IPostRepository)
+    + SubredditName : string <<get>> <<set>>
+    + OnGet(subredditId:int) : void
+}
+class "List`1"<T> {
+}
+PageModel <|-- SubredditModel
+SubredditModel --> "_subredditRepository" ISubredditRepository
+SubredditModel --> "_postRepository" IPostRepository
+SubredditModel --> "Posts<Post>" "List`1"
+@enduml

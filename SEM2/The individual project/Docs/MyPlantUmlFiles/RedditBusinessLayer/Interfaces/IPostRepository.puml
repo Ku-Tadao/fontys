@@ -1,0 +1,11 @@
+@startuml
+interface IPostRepository {
+    GetPosts() : List<Post>
+    GetPostsBySubredditId(subredditId:int) : List<Post>
+    GetPostsWithSubredditAndUser() : List<Post>
+    GetPostById(postId:int) : Post
+    UpdatePost(post:Post) : void
+    CreatePost(post:Post) : void
+    DeletePost(post:Post) : void
+}
+@enduml

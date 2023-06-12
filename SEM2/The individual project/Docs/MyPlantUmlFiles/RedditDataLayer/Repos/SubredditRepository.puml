@@ -1,0 +1,10 @@
+@startuml
+class SubredditRepository {
+    - <<readonly>> _connectionString : string
+    + SubredditRepository(connectionString:string)
+    + GetSubreddits() : List<Subreddit>
+    + GetSubredditById(subredditId:int) : Subreddit
+    + UpdateSubreddit(subreddit:Subreddit) : void
+}
+ISubredditRepository <|-- SubredditRepository
+@enduml

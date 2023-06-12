@@ -151,7 +151,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "RedditDataLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -165,6 +164,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "RedditBusinessLayer": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -504,6 +504,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "RedditBusinessLayer >= 1.0.0",
+      "RedditDataLayer >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -536,6 +537,9 @@
           "projectReferences": {
             "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\RedditBusinessLayer.csproj": {
               "projectPath": "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\RedditBusinessLayer.csproj"
+            },
+            "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditDataLayer\\RedditDataLayer.csproj": {
+              "projectPath": "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditDataLayer\\RedditDataLayer.csproj"
             }
           }
         }

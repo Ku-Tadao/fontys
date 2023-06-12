@@ -146,6 +146,19 @@
             "rid": "win"
           }
         }
+      },
+      "RedditBusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/RedditBusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RedditBusinessLayer.dll": {}
+        }
       }
     }
   },
@@ -462,10 +475,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "RedditBusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../RedditBusinessLayer/RedditBusinessLayer.csproj",
+      "msbuildProject": "../RedditBusinessLayer/RedditBusinessLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "RedditBusinessLayer >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -495,7 +514,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\RedditBusinessLayer.csproj": {
+              "projectPath": "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\RedditBusinessLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -146,19 +146,6 @@
             "rid": "win"
           }
         }
-      },
-      "RedditDataLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "System.Data.SqlClient": "4.8.5"
-        },
-        "compile": {
-          "bin/placeholder/RedditDataLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RedditDataLayer.dll": {}
-        }
       }
     }
   },
@@ -475,16 +462,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "RedditDataLayer/1.0.0": {
-      "type": "project",
-      "path": "../RedditDataLayer/RedditDataLayer.csproj",
-      "msbuildProject": "../RedditDataLayer/RedditDataLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "RedditDataLayer >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -514,11 +495,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditDataLayer\\RedditDataLayer.csproj": {
-              "projectPath": "C:\\fontys\\SEM2\\The individual project\\Reddit\\RedditDataLayer\\RedditDataLayer.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

@@ -1,0 +1,14 @@
+@startuml
+class PostRepository {
+    - <<readonly>> _connectionString : string
+    + PostRepository(connectionString:string)
+    + GetPosts() : List<Post>
+    + GetPostById(postId:int) : Post
+    + GetPostsBySubredditId(subredditId:int) : List<Post>
+    + UpdatePost(post:Post) : void
+    + CreatePost(post:Post) : void
+    + DeletePost(post:Post) : void
+    + GetPostsWithSubredditAndUser() : List<Post>
+}
+IPostRepository <|-- PostRepository
+@enduml

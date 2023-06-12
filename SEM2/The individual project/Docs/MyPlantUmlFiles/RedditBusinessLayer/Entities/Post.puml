@@ -1,0 +1,15 @@
+@startuml
+class Post {
+    + Post(id:int, title:string, content:string, dateCreated:DateTime, userId:int, subredditId:int)
+    + Id : int <<get>> <<set>>
+    + Title : string <<get>>
+    + Content : string <<get>>
+    + UserId : int <<get>> <<set>>
+    + SubredditId : int <<get>> <<set>>
+    + UpdateTitle(newTitle:string) : void
+    + UpdateContent(newContent:string) : void
+}
+Post --> "DateCreated" DateTime
+Post --> "Subreddit" Subreddit
+Post --> "User" User
+@enduml

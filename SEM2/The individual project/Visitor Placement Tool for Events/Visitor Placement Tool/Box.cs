@@ -8,17 +8,13 @@ namespace Visitor_Placement_Tool
 {
     public class Box
     {
-        public int Size { get; set; }
-        public int NumRows { get; set; }
-        public int NumChairs { get; set; }
         public char Letter { get; set; }
+        public List<Row> Rows { get; set; }
 
-        public Box(int size, int numRows, int numChairs, char letter)
+        public Box(char letter)
         {
-            Size = size;
-            NumRows = numRows;
-            NumChairs = numChairs;
             Letter = letter;
+            Rows = new List<Row>();
         }
     }
 }

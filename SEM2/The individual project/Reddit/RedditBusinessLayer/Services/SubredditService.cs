@@ -1,37 +1,39 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
-using RedditDataLayer.Entities;
+using RedditBusinessLayer.Entities;
 using RedditBusinessLayer.Interfaces;
-using RedditDataLayer;
 
 namespace RedditBusinessLayer.Services
 {
-    public class SubredditService : ISubredditService
+    public class SubredditService
     {
-        private readonly DatabaseHelper _databaseHelper;
+        private readonly ISubredditRepository _subredditRepository;
 
-        public SubredditService(DatabaseHelper databaseHelper)
+        public SubredditService(ISubredditRepository subredditRepository)
         {
-            _databaseHelper = databaseHelper;
+            // If the subredditRepository is null, an ArgumentNullException will be thrown with a message indicating that the subredditRepository cannot be null.
+            _subredditRepository = subredditRepository ?? throw new ArgumentNullException(nameof(subredditRepository));
         }
 
-        public void UpdateSubrxeddit(int subredditId, string newName, string newDescription)
+        public Subreddit GetSubredditById(int subredditId)
         {
-            // Retrieve the subreddit from the database
-            var subreddit = _databaseHelper.GetSubredditById(subredditId);
-
-            // Update the subreddit using the new methods
-            subreddit?.UpdateName(newName);
-            subreddit?.UpdateDescription(newDescription);
-
-            // Save the changes to the database
-            _databaseHelper.UpdateSubreddit(subreddit);
+            // If the subredditId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the subredditId must be greater than 0.
+            if (subredditId <= 0) throw new ArgumentOutOfRangeException(nameof(subredditId));
+            return _subredditRepository.GetSubredditById(subredditId);
         }
 
+        // No parameters, meaning no need to validate anything.
         public List<Subreddit> GetSubreddits()
         {
-            return _databaseHelper.GetSubreddits();
+            return _subredditRepository.GetSubreddits();
+        }
+
+        public void UpdateSubreddit(Subreddit subreddit)
+        {
+            // If the subreddit is null, an ArgumentNullException will be thrown with a message indicating that the subreddit cannot be null.
+            if (subreddit == null) throw new ArgumentNullException(nameof(subreddit));
+            _subredditRepository.UpdateSubreddit(subreddit);
         }
     }
-
 }

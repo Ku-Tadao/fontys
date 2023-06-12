@@ -1,3 +1,11 @@
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.csproj.AssemblyReference.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.AssemblyInfoInputs.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.AssemblyInfo.cs
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.csproj.CoreCompileInputs.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.MvcApplicationPartsAssemblyInfo.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.RazorAssemblyInfo.cache
+C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.RazorAssemblyInfo.cs
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\appsettings.Development.json
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\appsettings.json
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\RedditProject.staticwebassets.runtime.json
@@ -16,14 +24,6 @@ C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\Redd
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\RedditDataLayer.dll
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\RedditBusinessLayer.pdb
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\bin\Debug\net7.0\RedditDataLayer.pdb
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.csproj.AssemblyReference.cache
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.GeneratedMSBuildEditorConfig.editorconfig
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.AssemblyInfoInputs.cache
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.AssemblyInfo.cs
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.csproj.CoreCompileInputs.cache
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.MvcApplicationPartsAssemblyInfo.cache
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.RazorAssemblyInfo.cache
-C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\RedditProject.RazorAssemblyInfo.cs
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\staticwebassets\msbuild.RedditProject.Microsoft.AspNetCore.StaticWebAssets.props
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\staticwebassets\msbuild.build.RedditProject.props
 C:\fontys\SEM2\The individual project\Reddit\RedditProject\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.RedditProject.props

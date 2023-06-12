@@ -1,0 +1,10 @@
+@startuml
+class DeletePostModel {
+    + DeletePostModel(postRepository:IPostRepository)
+    + Id : int <<get>> <<set>>
+    + OnGet(id:int) : void
+    + OnPost() : IActionResult
+}
+PageModel <|-- DeletePostModel
+DeletePostModel --> "_postRepository" IPostRepository
+@enduml

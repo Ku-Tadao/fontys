@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditProject", "RedditProject.csproj", "{F68786B6-2CFE-4DC5-8E5B-2814EF7A205D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedditProject", "RedditProject.csproj", "{F68786B6-2CFE-4DC5-8E5B-2814EF7A205D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditBusinessLayer", "..\RedditBusinessLayer\RedditBusinessLayer.csproj", "{DD5A47DB-9ADB-433B-BE81-75D6BEF8E655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedditBusinessLayer", "..\RedditBusinessLayer\RedditBusinessLayer.csproj", "{DD5A47DB-9ADB-433B-BE81-75D6BEF8E655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditDataLayer", "..\RedditDataLayer\RedditDataLayer.csproj", "{3BCF1FAA-6F11-45D1-8EFB-AEB4D64B1B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedditDataLayer", "..\RedditDataLayer\RedditDataLayer.csproj", "{3BCF1FAA-6F11-45D1-8EFB-AEB4D64B1B21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditUnitTests", "..\RedditUnitTests\RedditUnitTests.csproj", "{7DA9FFE0-02B9-403A-A2C1-719D0E7F4633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedditUnitTests", "..\RedditUnitTests\RedditUnitTests.csproj", "{7DA9FFE0-02B9-403A-A2C1-719D0E7F4633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

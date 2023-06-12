@@ -1,0 +1,11 @@
+@startuml
+class Comment {
+    + Comment(id:int, content:string, dateCreated:DateTime, userId:int, postId:int)
+    + Id : int <<get>> <<set>>
+    + Content : string <<get>>
+    + UserId : int <<get>> <<set>>
+    + PostId : int <<get>> <<set>>
+    + UpdateContent(newContent:string) : void
+}
+Comment --> "DateCreated" DateTime
+@enduml

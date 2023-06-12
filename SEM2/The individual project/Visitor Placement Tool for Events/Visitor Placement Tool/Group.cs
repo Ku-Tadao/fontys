@@ -8,18 +8,16 @@ namespace Visitor_Placement_Tool
 {
     public class Group
     {
-        public int UniqueNumber { get; set; }
-        public List<Visitor> Members { get; set; }
+        public int Number { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
-        public Group(int uniqueNumber)
-        {
-            UniqueNumber = uniqueNumber;
-            Members = new List<Visitor>();
-        }
+        public List<Visitor> Visitors { get; set; }
 
-        public void AddMember(Visitor visitor)
+        public Group(int number)
         {
-            Members.Add(visitor);
+            Number = number;
+            Visitors = new List<Visitor>();
         }
     }
+
 }

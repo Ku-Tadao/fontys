@@ -1,0 +1,10 @@
+@startuml
+class UserRepository {
+    - <<readonly>> _connectionString : string
+    + UserRepository(connectionString:string)
+    + GetUsers() : List<User>
+    + GetUserById(userId:int) : User
+    + UpdateUser(user:User) : void
+}
+IUserRepository <|-- UserRepository
+@enduml

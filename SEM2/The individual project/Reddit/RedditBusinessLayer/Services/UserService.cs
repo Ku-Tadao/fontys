@@ -1,37 +1,56 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
-using RedditDataLayer.Entities;
+using RedditBusinessLayer.Entities;
 using RedditBusinessLayer.Interfaces;
-using RedditDataLayer;
 
 namespace RedditBusinessLayer.Services
 {
-    public class UserService : IUserService
+    public class UserService
     {
-        private readonly DatabaseHelper _databaseHelper;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(DatabaseHelper databaseHelper)
+        public UserService(IUserRepository userRepository)
         {
-            _databaseHelper = databaseHelper;
+            // If the userRepository is null, an ArgumentNullException will be thrown with a message indicating that the userRepository cannot be null.
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+        }
+
+        // No parameters, meaning no need to validate anything.
+        public List<User> GetUsers()
+        {
+            return _userRepository.GetUsers();
+        }
+
+        public User GetUserById(int userId)
+        {
+            // If the userId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the userId must be greater than 0.
+            if (userId <= 0) throw new ArgumentOutOfRangeException(nameof(userId));
+            return _userRepository.GetUserById(userId);
         }
 
         public void UpdateUser(int userId, string newUsername, string newPassword, string newEmail)
         {
-            // Retrieve the user from the database
-            var user = _databaseHelper.GetUserById(userId);
+            // If the userId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the userId must be greater than 0.
+            if (userId <= 0) throw new ArgumentOutOfRangeException(nameof(userId));
+            
+            // If the newUsername is null or whitespace, an ArgumentException will be thrown with a message indicating that the newUsername cannot be null or whitespace.
+            if (string.IsNullOrWhiteSpace(newUsername)) throw new ArgumentException("New username cannot be null or whitespace.", nameof(newUsername));
+            
+            // If the newPassword is null or whitespace, an ArgumentException will be thrown with a message indicating that the newPassword cannot be null or whitespace.
+            if (string.IsNullOrWhiteSpace(newPassword)) throw new ArgumentException("New password cannot be null or whitespace.", nameof(newPassword));
+            
+            // If the newEmail is null or whitespace, an ArgumentException will be thrown with a message indicating that the newEmail cannot be null or whitespace.
+            if (string.IsNullOrWhiteSpace(newEmail)) throw new ArgumentException("New email cannot be null or whitespace.", nameof(newEmail));
 
-            // Update the user using the new methods
-            user?.UpdateUsername(newUsername);
-            user?.UpdatePassword(newPassword);
-            user?.UpdateEmail(newEmail);
-
-            // Save the changes to the database
-            _databaseHelper.UpdateUser(user);
-        }
-
-        public List<User> GetUsers()
-        {
-            return _databaseHelper.GetUsers();
+            var user = _userRepository.GetUserById(userId);
+            
+            // If the user is not found, an ArgumentException will be thrown with a message indicating that the user was not found.
+            if (user == null) throw new ArgumentException("User not found.");
+            user.UpdateUsername(newUsername);
+            user.UpdatePassword(newPassword);
+            user.UpdateEmail(newEmail);
+            _userRepository.UpdateUser(user);
         }
     }
 }

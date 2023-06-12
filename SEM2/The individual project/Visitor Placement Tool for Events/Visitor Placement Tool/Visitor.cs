@@ -6,24 +6,19 @@ using System.Threading.Tasks;
 
 namespace Visitor_Placement_Tool
 {
-    public class Visitor
+    public abstract class Visitor
     {
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int UniqueNumber { get; set; }
-        public bool IsRegistered { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
-        public Visitor(string name, DateTime dateOfBirth, int uniqueNumber)
+        public Visitor(string name, DateTime dateOfBirth)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
-            UniqueNumber = uniqueNumber;
-            IsRegistered = false;
         }
 
-        public void Register()
-        {
-            IsRegistered = true;
-        }
+        public abstract bool IsChild();
     }
+
 }
