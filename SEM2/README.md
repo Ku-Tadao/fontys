@@ -234,6 +234,7 @@ In my project, I use a layered architecture to achieve separation of concerns. T
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Architecture Multilayered Architecture/Multilayered Architecture.jpg" alt="Multilayered Architecture Diagram">
 </div>
+
 **The Database** is where the data is stored and retrieved from. In my project, it would be represented as a Microsoft SQL Server Database.
 
 By separating the different concerns into different layers, I can avoid having one layer interact directly with another layer that it shouldn’t interact with. For example, the Presentation Layer should not interact directly with the Database because that would violate the separation of concerns and make it harder to maintain and test my code.
