@@ -143,6 +143,7 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
   </details>
 
 The EERD represents a database with four entities: `Comment`, `Post`, `Subreddit`, and `User`.
+
 Entities and Attributes
 - The `Comment` entity has the following attributes: `Id`, `DateCreated`, and `Content`.
 - The `Post` entity has the following attributes: `Id`, `Title`, `Content`, and `DateCreated`.
