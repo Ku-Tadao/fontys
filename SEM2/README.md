@@ -80,7 +80,7 @@ Name | UC01: Create an account and login
 Summary | - A user can create an account on the platform by providing their information and choosing a secure password.<br>- The platform implements user authentication and authorization according to industry best practices to ensure the security of user data.
 Actors | User
 Assumptions | None
-Scenario | - The actor navigates to the platform’s homepage and clicks on the “Sign Up” button.<br>- The actor is redirected to a registration page where they are prompted to enter their personal information such as their name, email address, and date of birth.<br>- The actor chooses a unique username and a secure password that meets the platform’s password requirements.<br>- The actor clicks on the “Submit” button to create their account.<br>- The actor receives a confirmation email with a link to verify their email address.<br>- The actor clicks on the verification link to complete the registration process.<br>- The actor can now login securely using their username and password.
+Scenario | - The actor navigates to the platformâ€™s homepage and clicks on the â€œSign Upâ€ button.<br>- The actor is redirected to a registration page where they are prompted to enter their personal information such as their name, email address, and date of birth.<br>- The actor chooses a unique username and a secure password that meets the platformâ€™s password requirements.<br>- The actor clicks on the â€œSubmitâ€ button to create their account.<br>- The actor receives a confirmation email with a link to verify their email address.<br>- The actor clicks on the verification link to complete the registration process.<br>- The actor can now login securely using their username and password.
 Exceptions | - Not all required information has been entered.<br>- The entered password does not meet the security requirements.<br>- The chosen username is already taken.
 Result | A new account has been created and the user can login securely.
 
@@ -90,7 +90,7 @@ Name | UC02: Create a new post
 Summary | - A user can create a new post with text and/or media content.<br>- The platform supports the creation and moderation of subreddits by users.
 Actors | User
 Assumptions | The user is logged in and has permission to create posts.
-Scenario | - The actor logs into their account and navigates to the subreddit where they want to create a post.<br>- The actor clicks on the “Create Post” button located at the top of the subreddit page.<br>- The actor is redirected to a post creation page where they can enter the post title and content (text and/or media).<br>- The actor can format their post using the platform’s text editor and add media such as images or videos by uploading files or providing URLs.<br>- The actor can preview their post before publishing it by clicking on the “Preview” button.<br>- Once satisfied with their post, the actor clicks on the “Submit” button to publish it.
+Scenario | - The actor logs into their account and navigates to the subreddit where they want to create a post.<br>- The actor clicks on the â€œCreate Postâ€ button located at the top of the subreddit page.<br>- The actor is redirected to a post creation page where they can enter the post title and content (text and/or media).<br>- The actor can format their post using the platformâ€™s text editor and add media such as images or videos by uploading files or providing URLs.<br>- The actor can preview their post before publishing it by clicking on the â€œPreviewâ€ button.<br>- Once satisfied with their post, the actor clicks on the â€œSubmitâ€ button to publish it.
 Exceptions | - The entered post title or content is invalid or does not meet subreddit rules.<br>- The user does not have permission to create posts in the selected subreddit.
 Result | A new post has been created and is visible to other users.
 
@@ -100,7 +100,7 @@ Name | UC03: View a feed of posts
 Summary | - A user can view a feed of posts from all users or from specific subreddits.<br>- The platform implements efficient algorithms to sort and filter posts based on user preferences and subreddit rules.
 Actors | User
 Assumptions | None
-Scenario | - The actor navigates to the platform’s homepage or a specific subreddit page.<br>- By default, the actor sees a feed of posts sorted by “Hot”, which displays popular posts from all users or from the selected subreddit.<br>- The actor can change how posts are sorted by clicking on one of several sorting options such as “New”, “Top”, or “Controversial”.<br>- The actor can also filter posts by time range (e.g., past hour, past 24 hours, past week) using a drop-down menu.<br>- The actor can interact with posts by clicking on them to view their content, upvoting or downvoting them, commenting on them, or sharing them with others.<br>- The actor can also save posts for later viewing by clicking on the “Save” button located below each post.<br>- The actor can navigate between pages of posts using pagination controls located at the bottom of the feed.<br>- The actor can also search for specific posts using keywords or phrases by entering them into a search bar located at the top of the page.<br>- The search results are displayed in a separate feed that can be sorted and filtered using the same controls as described above.<br>- The actor can return to their original feed at any time by clearing their search query or navigating back to the homepage or subreddit page.
+Scenario | - The actor navigates to the platformâ€™s homepage or a specific subreddit page.<br>- By default, the actor sees a feed of posts sorted by â€œHotâ€, which displays popular posts from all users or from the selected subreddit.<br>- The actor can change how posts are sorted by clicking on one of several sorting options such as â€œNewâ€, â€œTopâ€, or â€œControversialâ€.<br>- The actor can also filter posts by time range (e.g., past hour, past 24 hours, past week) using a drop-down menu.<br>- The actor can interact with posts by clicking on them to view their content, upvoting or downvoting them, commenting on them, or sharing them with others.<br>- The actor can also save posts for later viewing by clicking on the â€œSaveâ€ button located below each post.<br>- The actor can navigate between pages of posts using pagination controls located at the bottom of the feed.<br>- The actor can also search for specific posts using keywords or phrases by entering them into a search bar located at the top of the page.<br>- The search results are displayed in a separate feed that can be sorted and filtered using the same controls as described above.<br>- The actor can return to their original feed at any time by clearing their search query or navigating back to the homepage or subreddit page.
 Exceptions | None
 Result | The user can view a feed of posts from all users or from specific subreddits.
 
@@ -159,15 +159,15 @@ Based on the requirements, you can often already come up with a number of scenar
 
 Test Case | Use Case(s) | Input | Expected Output
 --- | --- | --- | ---
-TC01 | FR-01 | Action: “Create account”, Username: “testuser”, Password: “password123” | Account created for “testuser”
-TC02 | FR-01 | Action: “Log in”, Username: “testuser”, Password: “password123” | User “testuser” logged in successfully
-TC03 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post”
-TC04 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users
-TC05 | FR-04 | Action: “Upvote post”, Post ID: 1 | Post with ID 1 upvoted
-TC06 | FR-05 | Action: “Comment on post”, Post ID: 1, Comment: “This is a test comment” | Comment added to post with ID 1
-TC07 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content
-TC08 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned
-TC09 | FR-08 | Action: “Run tests” | Tests executed and results reported
+TC01 | FR-01 | Action: â€œCreate accountâ€, Username: â€œtestuserâ€, Password: â€œpassword123â€ | Account created for â€œtestuserâ€
+TC02 | FR-01 | Action: â€œLog inâ€, Username: â€œtestuserâ€, Password: â€œpassword123â€ | User â€œtestuserâ€ logged in successfully
+TC03 | FR-02 | Action: â€œCreate postâ€, Title: â€œTest postâ€, Content: â€œThis is a test postâ€ | Post created with title â€œTest postâ€ and content â€œThis is a test postâ€
+TC04 | FR-03 | Action: â€œView feedâ€, Filter: â€œAll usersâ€ | Feed displayed with posts from all users
+TC05 | FR-04 | Action: â€œUpvote postâ€, Post ID: 1 | Post with ID 1 upvoted
+TC06 | FR-05 | Action: â€œComment on postâ€, Post ID: 1, Comment: â€œThis is a test commentâ€ | Comment added to post with ID 1
+TC07 | FR-06 | Action: â€œEdit postâ€, Post ID: 1, New content: â€œUpdated contentâ€ | Post with ID 1 updated with new content
+TC08 | FR-07 | Action: â€œQuery databaseâ€, Query: â€œSELECT * FROM postsâ€ | Query executed and results returned
+TC09 | FR-08 | Action: â€œRun testsâ€ | Tests executed and results reported
 
 Test Case	| FR-01	| B-01.1	| K-01.1	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1
 ---			|---	| ---		| ---		| ---	| ---		| ---		| ---	| ---		| ---
@@ -175,7 +175,7 @@ TC01		| X	| X
 TC02	| X	| X							
 TC03	||||			| X	| X	| X			
 TC04	|||||||							| X	| X
-TC05 - TC09	|…	|…	|…	|…	|…	|…	|…	|…	|…	
+TC05 - TC09	|â€¦	|â€¦	|â€¦	|â€¦	|â€¦	|â€¦	|â€¦	|â€¦	|â€¦	
 
 
 ## Design
@@ -214,8 +214,24 @@ Eventually, you will also start storing things in a database (this is one of the
 
   </details>
 
-**This is a work in progress.**<br>
-Domain Model is Non Existent as of now.
+Class Diagram:
+1. **User, Post, Subreddit (Entities)**: These classes represent the core business objects in the system. A user can create many posts and each post belongs to one subreddit.
+
+2. **UserRepository, PostRepository, SubredditRepository (DataLayer)**: These classes are the implementations of their respective interfaces and are responsible for managing the interaction between the application and the database. They handle all CRUD operations for the respective entities.
+
+3. **IUserRepository, IPostRepository, ISubredditRepository (BusinessLayer)**: These are the interfaces that the repository classes implement. They define the common methods that the repository classes must have.
+
+4. **UserService, PostService, SubredditService (BusinessLayer)**: These classes use the repositories to perform operations on the entities and manage the business logic of the application. They also make sure that any business rules or invariants are upheld.
+
+5. **Relations**:
+    - The UserRepository, PostRepository, and SubredditRepository classes implement IUserRepository, IPostRepository, and ISubredditRepository interfaces, respectively.
+    - The UserService, PostService, and SubredditService classes depend on IUserRepository, IPostRepository, and ISubredditRepository interfaces, respectively. This relationship is represented by a line with a hollow diamond at the interface end.
+    - There is a one-to-many relationship from User to Post and from Subreddit to Post, indicated by "1" at User and Subreddit ends, and "0..*" at Post end. This implies that one User/Subreddit can have zero or many Posts.
+
+6. **Packages**: The classes and interfaces are grouped into two packages: RedditBusinessLayer and RedditDataLayer. RedditBusinessLayer contains the entities, interfaces and services while RedditDataLayer contains the concrete implementations of the interfaces. This structure indicates a clear separation of concerns within the architecture of the application. 
+<div align="center">
+<img src="/SEM2/The individual project/Docs/Class Diagram/Class Diagram.png" alt="Class Diagram">
+</div>
 
 Entity Relationship Diagram:
 <div align="center">
