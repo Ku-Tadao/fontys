@@ -215,6 +215,7 @@ Eventually, you will also start storing things in a database (this is one of the
   </details>
 
 <details><summary>Class Diagram Legend</summary>
+
 1.Arrow with a hollow diamond (Aggregation): Represents a "has a" relationship. It signifies that one class is a part of another class. For example, the UserService has a IUserRepository. The diamond points towards the "whole" or "parent" class.
   
 2. Arrow with a solid line (Association): It represents a relationship between two classes, but there is no ownership. For example, a Post is associated with a User, but they do not necessarily own each other.
