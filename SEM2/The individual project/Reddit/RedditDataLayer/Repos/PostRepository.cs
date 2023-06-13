@@ -163,21 +163,21 @@ public class PostRepository : IPostRepository
                             reader.GetDateTime(reader.GetOrdinal("DateCreated")),
                             0,
                             0
-                        );
-
-                        post.Subreddit = new Subreddit(
-                            0,
-                            reader.GetString(reader.GetOrdinal("SubredditName")),
-                            reader.GetString(reader.GetOrdinal("SubredditDescription"))
-                        );
-
-                        // Use static data for User because Timo said don't create a Login page
-                        post.User = new User(
-                            1,
-                            "ExampleUser1",
-                            "ExamplePassword1",
-                            "example1@example.com"
-                        );
+                        )
+                        {
+                            Subreddit = new Subreddit(
+                                0,
+                                reader.GetString(reader.GetOrdinal("SubredditName")),
+                                reader.GetString(reader.GetOrdinal("SubredditDescription"))
+                            ),
+                            // Use static data for User because Timo said don't create a Login page
+                            User = new User(
+                                1,
+                                "ExampleUser1",
+                                "ExamplePassword1",
+                                "example1@example.com"
+                            )
+                        };
 
                         posts.Add(post);
                     }
