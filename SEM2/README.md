@@ -167,7 +167,7 @@ Based on the requirements, you can often already come up with a number of scenar
 
   </details>
 
-
+The Test Plan outlines the specific steps taken to verify each requirement of the application. It includes the actions, inputs, and the expected outcomes for each of my test cases. In essence, the Test Plan guides the testing process and helps ensure that each requirement is tested appropriately.
 | Test Case | Use Case(s) | Input | Expected Output |
 | --- | --- | --- | --- |
 | TC01 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
@@ -179,6 +179,7 @@ Based on the requirements, you can often already come up with a number of scenar
 | TC07 | FR-08 | Action: “Run tests” | Tests executed and results reported |
 
 
+While the Test Plan details the testing process, the Test Matrix cross-references each test case with the specific requirements they are designed to test. This helps me ensure that all requirements are being covered by the tests. Each 'X' in the matrix represents a test case that covers the respective requirement.
 | Test Case | FR-02 | B-02.1 | K-02.1 | FR-03 | B-03.1 | K-03.1 | FR-04 | B-04.1 | K-04.1 | FR-05 | B-05.1 | K-05.1 | FR-06 | B-06.1 | K-06.1 | FR-07 | B-07.1 | K-07.1 | FR-08 | B-08.1 | K-08.1 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | TC01 | X | X | X | | | | | | | | | | | | | | | | | | |
@@ -189,6 +190,7 @@ Based on the requirements, you can often already come up with a number of scenar
 | TC06 | | | | | | | | | | | | | | | | X | X | X | | | |
 | TC07 | | | | | | | | | | | | | | | | | | | X | X | X |
 
+The Test Plan and Test Matrix together form a comprehensive approach to validating the functionality and quality of my Reddit replica application.
 
 
 ## Design
