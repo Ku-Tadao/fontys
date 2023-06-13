@@ -1,16 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RedditBusinessLayer.Interfaces;
+using RedditBusinessLayer.Services;
 
 namespace RedditProject.Pages
 {
     public class EditPostModel : PageModel
     {
-        private readonly IPostRepository _postRepository;
+        private readonly PostService _postService;
 
         public EditPostModel(IPostRepository postRepository)
         {
-            _postRepository = postRepository;
+            _postService = new PostService(postRepository);
         }
 
         [BindProperty]
@@ -24,7 +25,7 @@ namespace RedditProject.Pages
 
         public void OnGet(int id)
         {
-            var post = _postRepository.GetPostById(id);
+            var post = _postService.GetPostById(id);
             Id = post.Id;
             Title = post.Title;
             Content = post.Content;
@@ -37,10 +38,10 @@ namespace RedditProject.Pages
                 return Page();
             }
 
-            var post = _postRepository.GetPostById(Id);
+            var post = _postService.GetPostById(Id);
             post.UpdateTitle(Title);
             post.UpdateContent(Content);
-            _postRepository.UpdatePost(post);
+            _postService.UpdatePost(post);
 
             return RedirectToPage("/Index");
         }
