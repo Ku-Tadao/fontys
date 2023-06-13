@@ -223,6 +223,7 @@ Eventually, you will also start storing things in a database (this is one of the
 6. **Numbers (Cardinality)**: They show the number of instances of one class linked to one instance of the other class. For example, '1' means exactly one instance and '0..*' means zero to many instances.
 
   </details>
+ 
 Class Diagram:
 1. **User, Post, Subreddit (Entities)**: These classes represent the core business objects in the system. A user can create many posts and each post belongs to one subreddit.
 
