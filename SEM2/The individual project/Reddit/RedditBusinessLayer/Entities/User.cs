@@ -26,19 +26,21 @@
 
         public void UpdatePassword(string newPassword)
         {
-            if (string.IsNullOrWhiteSpace(newPassword))
-                throw new ArgumentException("Password cannot be empty or whitespace.");
-            if (newPassword.Length < 8)
-                throw new ArgumentException("Password must be at least 8 characters long.");
+            //Don't have a login system
+            //if (string.IsNullOrWhiteSpace(newPassword))
+            //    throw new ArgumentException("Password cannot be empty or whitespace.");
+            //if (newPassword.Length < 8)
+            //    throw new ArgumentException("Password must be at least 8 characters long.");
             Password = newPassword;
         }
 
         public void UpdateEmail(string newEmail)
         {
-            if (string.IsNullOrWhiteSpace(newEmail))
-                throw new ArgumentException("Email cannot be empty or whitespace.");
-            if (!newEmail.Contains("@"))
-                throw new ArgumentException("Email must contain an '@' symbol.");
+            //Don't have a login system
+            //    if (string.IsNullOrWhiteSpace(newEmail))
+            //        throw new ArgumentException("Email cannot be empty or whitespace.");
+            //    if (!newEmail.Contains("@"))
+            //throw new ArgumentException("Email must contain an '@' symbol.");
             Email = newEmail;
         }
     }

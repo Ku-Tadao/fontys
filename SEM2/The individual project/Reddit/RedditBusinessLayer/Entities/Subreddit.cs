@@ -14,7 +14,7 @@
         public int Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
-
+        public List<User> Users { get; set; }
         public void UpdateName(string newName)
         {
             if (string.IsNullOrWhiteSpace(newName))

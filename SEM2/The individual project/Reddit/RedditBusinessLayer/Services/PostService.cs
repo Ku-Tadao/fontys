@@ -13,7 +13,7 @@ namespace RedditBusinessLayer.Services
         public PostService(IPostRepository postRepository)
         {
             // If the postRepository is null, an ArgumentNullException will be thrown with a message indicating that the postRepository cannot be null.
-            _postRepository = postRepository ?? throw new ArgumentNullException(nameof(postRepository));
+            _postRepository = postRepository ?? throw new ArgumentNullException();
         }
 
         // No parameters, meaning no need to validate anything.
@@ -25,20 +25,20 @@ namespace RedditBusinessLayer.Services
         public Post GetPostById(int postId)
         {
             // If the postId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the postId must be greater than 0.
-            if (postId <= 0) throw new ArgumentOutOfRangeException(nameof(postId));
+            if (postId <= 0) throw new ArgumentOutOfRangeException();
             return _postRepository.GetPostById(postId);
         }
 
         public void UpdatePost(int postId, string newTitle, string newContent)
         {
             // If the postId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the postId must be greater than 0.
-            if (postId <= 0) throw new ArgumentOutOfRangeException(nameof(postId));
+            if (postId <= 0) throw new ArgumentOutOfRangeException();
             
             // If the newTitle is null or whitespace, an ArgumentException will be thrown with a message indicating that the newTitle cannot be null or whitespace.
-            if (string.IsNullOrWhiteSpace(newTitle)) throw new ArgumentException("New title cannot be null or whitespace.", nameof(newTitle));
+            if (string.IsNullOrWhiteSpace(newTitle)) throw new ArgumentException("New title cannot be null or whitespace.");
             
             // If the newContent is null or whitespace, an ArgumentException will be thrown with a message indicating that the newContent cannot be null or whitespace.
-            if (string.IsNullOrWhiteSpace(newContent)) throw new ArgumentException("New content cannot be null or whitespace.", nameof(newContent));
+            if (string.IsNullOrWhiteSpace(newContent)) throw new ArgumentException("New content cannot be null or whitespace.");
 
             var post = _postRepository.GetPostById(postId);
             

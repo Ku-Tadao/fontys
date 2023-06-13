@@ -1,7 +1,6 @@
 using RedditBusinessLayer.Entities;
 using RedditBusinessLayer.Interfaces;
 using RedditBusinessLayer.Services;
-using RedditDataLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 
