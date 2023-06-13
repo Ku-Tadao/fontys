@@ -67,6 +67,7 @@ K = Kwaliteitseis
   - K-08.1: The software must be reliable and free of critical bugs.
 
 
+
 ### Use Cases
 <details><summary>Assignment</summary>
 
@@ -104,6 +105,9 @@ Scenario | - The actor navigates to the platform’s homepage or a specific subr
 Exceptions | None
 Result | The user can view a feed of posts from all users or from specific subreddits.
 
+
+
+
 ### Context Diagram
 <details><summary>Assignment</summary>
 
@@ -122,6 +126,9 @@ The C4 model provides an explanation of the Context diagramLinks to an external 
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
 </div>
+
+
+
 
 ### Conceptual Model
 <details><summary>Assignment</summary>
@@ -151,31 +158,37 @@ A UI sketch can help gather requirements. By thinking about what the site looks 
 <img src="/SEM2/The individual project/Docs/UI sketches/WireFrame Reddit Profile.png" alt="WireFrame Reddit Profile">
 </div>
 
+
+
+
 ### Test Plan + Test Matrix
 <details><summary>Assignment</summary>
 Based on the requirements, you can often already come up with a number of scenarios that your application must meet. Both the 'happy flow', where you go through the steps as it should be, but also the error situations. For both of these scenarios you can invent a test to verify that your software works as intended. You can document these tests in a test plan and demonstrate that you cover your requirements with a test matrix.
 
   </details>
 
-Test Case | Use Case(s) | Input | Expected Output
---- | --- | --- | ---
-TC01 | FR-01 | Action: “Create account”, Username: “testuser”, Password: “password123” | Account created for “testuser”
-TC02 | FR-01 | Action: “Log in”, Username: “testuser”, Password: “password123” | User “testuser” logged in successfully
-TC03 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post”
-TC04 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users
-TC05 | FR-04 | Action: “Upvote post”, Post ID: 1 | Post with ID 1 upvoted
-TC06 | FR-05 | Action: “Comment on post”, Post ID: 1, Comment: “This is a test comment” | Comment added to post with ID 1
-TC07 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content
-TC08 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned
-TC09 | FR-08 | Action: “Run tests” | Tests executed and results reported
 
-Test Case	| FR-01	| B-01.1	| K-01.1	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1
----			|---	| ---		| ---		| ---	| ---		| ---		| ---	| ---		| ---
-TC01		| X	| X							
-TC02	| X	| X							
-TC03	||||			| X	| X	| X			
-TC04	|||||||							| X	| X
-TC05 - TC09	|…	|…	|…	|…	|…	|…	|…	|…	|…	
+| Test Case | Use Case(s) | Input | Expected Output |
+| --- | --- | --- | --- |
+| TC01 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
+| TC02 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users |
+| TC03 | FR-04 | Action: “Upvote post”, Post ID: 1 | Post with ID 1 upvoted |
+| TC04 | FR-05 | Action: “Comment on post”, Post ID: 1, Comment: “This is a test comment” | Comment added to post with ID 1 |
+| TC05 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content |
+| TC06 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned |
+| TC07 | FR-08 | Action: “Run tests” | Tests executed and results reported |
+
+
+| Test Case | FR-02 | B-02.1 | K-02.1 | FR-03 | B-03.1 | K-03.1 | FR-04 | B-04.1 | K-04.1 | FR-05 | B-05.1 | K-05.1 | FR-06 | B-06.1 | K-06.1 | FR-07 | B-07.1 | K-07.1 | FR-08 | B-08.1 | K-08.1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| TC01 | X | X | X | | | | | | | | | | | | | | | | | | |
+| TC02 | | | | X | X | X | | | | | | | | | | | | | | | |
+| TC03 | | | | | | | X | X | X | | | | | | | | | | | | |
+| TC04 | | | | | | | | | | X | X | X | | | | | | | | | |
+| TC05 | | | | | | | | | | | | | X | X | X | | | | | | |
+| TC06 | | | | | | | | | | | | | | | | X | X | X | | | |
+| TC07 | | | | | | | | | | | | | | | | | | | X | X | X |
+
 
 
 ## Design
@@ -267,6 +280,7 @@ Relationships
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Conceptual model/ERD1.png" alt="Entity Relationship Diagram">
 </div>
+
 
 ## Testing
 **Unittest (automatic) and Acceptance testing are not ready yet**
