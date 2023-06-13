@@ -226,15 +226,15 @@ When designing the architecture, you determine the necessary components and defi
 
 In my project, I use a layered architecture to achieve separation of concerns. The architecture consists of four layers: Presentation Layer, Business Layer, Data Access Layer, and Database.
 
-The Presentation Layer is the top layer of the architecture. It represents the user interface and the communication part of the software. In my project, I use ASP.NET Core Razor Pages to build dynamic web pages using C# and Razor syntax. This layer communicates with the Business Layer to retrieve and display data to the user.
+**The Presentation Layer** is the top layer of the architecture. It represents the user interface and the communication part of the software. In my project, I use ASP.NET Core Razor Pages to build dynamic web pages using C# and Razor syntax. This layer communicates with the Business Layer to retrieve and display data to the user.
 
-The Business Layer, also known as the logic layer, contains the application’s core logic. It is where I define my business rules. In my project, this layer is structured as a group of Services (PostService, RedditService, SubredditService, UserService) that encapsulate the business logic and communicate with the Data Access Layer to retrieve and manipulate data. This layer communicates with both the Presentation Layer and the Data Access Layer.
+**The Business Layer**, also known as the logic layer, contains the application’s core logic. It is where I define my business rules. In my project, this layer is structured as a group of Services (PostService, RedditService, SubredditService, UserService) that encapsulate the business logic and communicate with the Data Access Layer to retrieve and manipulate data. This layer communicates with both the Presentation Layer and the Data Access Layer.
 
-The Data Access Layer contains the logic for the business layer to handle the CRUD operations against my database. In my project, this layer uses a Repository pattern to segregate these operations. It contains the repositories (PostRepository, SubredditRepository, UserRepository) that communicate directly with the Database using SQL queries. This layer should only be responsible for performing database operations and should not contain any business logic.
+**The Data Access Layer** contains the logic for the business layer to handle the CRUD operations against my database. In my project, this layer uses a Repository pattern to segregate these operations. It contains the repositories (PostRepository, SubredditRepository, UserRepository) that communicate directly with the Database using SQL queries. This layer should only be responsible for performing database operations and should not contain any business logic.
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Architecture Multilayered Architecture/Multilayered Architecture.jpg" alt="Multilayered Architecture Diagram">
 </div>
-The Database is where the data is stored and retrieved from. In my project, it would be represented as a Microsoft SQL Server Database.
+**The Database** is where the data is stored and retrieved from. In my project, it would be represented as a Microsoft SQL Server Database.
 
 By separating the different concerns into different layers, I can avoid having one layer interact directly with another layer that it shouldn’t interact with. For example, the Presentation Layer should not interact directly with the Database because that would violate the separation of concerns and make it harder to maintain and test my code.
 
