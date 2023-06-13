@@ -1944,6 +1944,33 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "RedditBusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/RedditBusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RedditBusinessLayer.dll": {}
+        }
+      },
+      "RedditDataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "RedditBusinessLayer": "1.0.0",
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/RedditDataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RedditDataLayer.dll": {}
+        }
       }
     }
   },
@@ -6537,11 +6564,23 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "RedditBusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../RedditBusinessLayer/RedditBusinessLayer.csproj",
+      "msbuildProject": "../RedditBusinessLayer/RedditBusinessLayer.csproj"
+    },
+    "RedditDataLayer/1.0.0": {
+      "type": "project",
+      "path": "../RedditDataLayer/RedditDataLayer.csproj",
+      "msbuildProject": "../RedditDataLayer/RedditDataLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.3.2",
+      "RedditBusinessLayer >= 1.0.0",
+      "RedditDataLayer >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
@@ -6579,7 +6618,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\fontys\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\RedditBusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\fontys\\SEM2\\The individual project\\Reddit\\RedditBusinessLayer\\RedditBusinessLayer.csproj"
+            },
+            "C:\\Users\\User\\Desktop\\fontys\\SEM2\\The individual project\\Reddit\\RedditDataLayer\\RedditDataLayer.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\fontys\\SEM2\\The individual project\\Reddit\\RedditDataLayer\\RedditDataLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

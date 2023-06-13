@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RedditBusinessLayer\RedditBusinessLayer.csproj" />
+    <ProjectReference Include="..\RedditDataLayer\RedditDataLayer.csproj" />
+  </ItemGroup>
+
 </Project>
