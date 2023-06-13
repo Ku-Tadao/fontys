@@ -142,11 +142,25 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 
   </details>
 
+The EERD represents a database with four entities: `Comment`, `Post`, `Subreddit`, and `User`.
+Entities and Attributes
+- The `Comment` entity has the following attributes: `Id`, `DateCreated`, and `Content`.
+- The `Post` entity has the following attributes: `Id`, `Title`, `Content`, and `DateCreated`.
+- The `Subreddit` entity has the following attributes: `Id`, `Description`, and `Name`.
+- The `User` entity has the following attributes: `Id`, `Email`, `Username`, and `Password`.
+
+Relationships
+- There is a many-to-one relationship between the `Comment` and `Post` entities, represented by a hollow diamond labeled "On".
+- There is a many-to-one relationship between the `Comment` and `User` entities, represented by a hollow diamond labeled "Writes".
+- There is a many-to-one relationship between the `Post` and `Subreddit` entities, represented by a hollow diamond labeled "In".
+- There is a many-to-one relationship between the `Post` and `User` entities, represented by a hollow diamond labeled "Creates".
+
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
 </div>
 
-## UI Sketches
+
+### UI Sketches
 <details><summary>Assignment</summary>
 A UI sketch can help gather requirements. By thinking about what the site looks like, you also force yourself to consider what functionality must be present to make that happen. Note that an outline should be mostly sketchy; that sounds obvious, but make sure it doesn't contain too much detail. It certainly shouldn't look too detailed either.
 
@@ -157,8 +171,6 @@ A UI sketch can help gather requirements. By thinking about what the site looks 
 <img src="/SEM2/The individual project/Docs/UI sketches/WireFrame Reddit Homepage.png" alt="WireFrame Reddit Homepage">
 <img src="/SEM2/The individual project/Docs/UI sketches/WireFrame Reddit Profile.png" alt="WireFrame Reddit Profile">
 </div>
-
-
 
 
 ### Test Plan + Test Matrix
