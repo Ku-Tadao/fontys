@@ -185,23 +185,20 @@ The Test Plan outlines the specific steps taken to verify each requirement of th
 | --- | --- | --- | --- |
 | TC01 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
 | TC02 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users |
-| TC03 | FR-04 | Action: “Upvote post”, Post ID: 1 | Post with ID 1 upvoted |
-| TC04 | FR-05 | Action: “Comment on post”, Post ID: 1, Comment: “This is a test comment” | Comment added to post with ID 1 |
-| TC05 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content |
-| TC06 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned |
-| TC07 | FR-08 | Action: “Run tests” | Tests executed and results reported |
+| TC03 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content |
+| TC04 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned |
+| TC05 | FR-08 | Action: “Run tests” | Tests executed and results reported |
 
 
-While the Test Plan details the testing process, the Test Matrix cross-references each test case with the specific requirements they are designed to test. This helps me ensure that all requirements are being covered by the tests. Each 'X' in the matrix represents a test case that covers the respective requirement.
-| Test Case | FR-02 | B-02.1 | K-02.1 | FR-03 | B-03.1 | K-03.1 | FR-04 | B-04.1 | K-04.1 | FR-05 | B-05.1 | K-05.1 | FR-06 | B-06.1 | K-06.1 | FR-07 | B-07.1 | K-07.1 | FR-08 | B-08.1 | K-08.1 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| TC01 | X | X | X | | | | | | | | | | | | | | | | | | |
-| TC02 | | | | X | X | X | | | | | | | | | | | | | | | |
-| TC03 | | | | | | | X | X | X | | | | | | | | | | | | |
-| TC04 | | | | | | | | | | X | X | X | | | | | | | | | |
-| TC05 | | | | | | | | | | | | | X | X | X | | | | | | |
-| TC06 | | | | | | | | | | | | | | | | X | X | X | | | |
-| TC07 | | | | | | | | | | | | | | | | | | | X | X | X |
+Given that only the requirements FR-02, FR-03, FR-06, FR-07, and FR-08 are being tested, the Test Matrix looks like this:
+| Test Case	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1 | FR-06 | B-06.1 | K-06.1 | FR-07 | B-07.1 | K-07.1 | FR-08 | B-08.1 | K-08.1 |
+| ---		|---	| ---		| ---		| ---	| ---		| ---		| ---	| ---	| ---		| ---	| ---		| ---		| ---	| ---		| ---		|
+| TC01		| X	| X		| X		| 
+| TC02		|  	|  		|  		| X	| X		| X
+| TC03		|  	|  		|  		|   	|  		|   	| X	| X		| X
+| TC04		|  	|  		|  		|   	|  		|   	|   	|  		|   		| X	| X		| X
+| TC05		|  	|  		|  		|   	|  		|   	|   	|  		|   		|   	|  		|   	| X	| X		| X
+
 
 The Test Plan and Test Matrix together form a comprehensive approach to validating the functionality and quality of my Reddit replica application.
 
