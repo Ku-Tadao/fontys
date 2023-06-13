@@ -215,12 +215,17 @@ Eventually, you will also start storing things in a database (this is one of the
   </details>
 
 <details><summary>Class Diagram Legend</summary>
-1. **Arrow with a hollow diamond (Aggregation)**: Represents a "has a" relationship. It signifies that one class is a part of another class. For example, the UserService has a IUserRepository. The diamond points towards the "whole" or "parent" class.
-2. **Arrow with a solid line (Association)**: It represents a relationship between two classes, but there is no ownership. For example, a Post is associated with a User, but they do not necessarily own each other.
-3. **Arrow with a dashed line (Dependency)**: It signifies that one class depends on another. This dependency could be a method parameter, local variable, or an operation call return.
-4. **Arrow with a dashed line and closed, filled arrowhead (Implements)**: It represents a class that implements an interface.
-5. **Arrow with a solid line and open arrowhead (Inheritance/Extension)**: It signifies that a class is inherited from another class or an interface.
-6. **Numbers (Cardinality)**: They show the number of instances of one class linked to one instance of the other class. For example, '1' means exactly one instance and '0..*' means zero to many instances.
+1.Arrow with a hollow diamond (Aggregation): Represents a "has a" relationship. It signifies that one class is a part of another class. For example, the UserService has a IUserRepository. The diamond points towards the "whole" or "parent" class.
+  
+2. Arrow with a solid line (Association): It represents a relationship between two classes, but there is no ownership. For example, a Post is associated with a User, but they do not necessarily own each other.
+  
+3. Arrow with a dashed line (Dependency): It signifies that one class depends on another. This dependency could be a method parameter, local variable, or an operation call return.
+  
+4. Arrow with a dashed line and closed, filled arrowhead (Implements): It represents a class that implements an interface.
+  
+5. Arrow with a solid line and open arrowhead (Inheritance/Extension): It signifies that a class is inherited from another class or an interface.
+  
+6. Numbers (Cardinality): They show the number of instances of one class linked to one instance of the other class. For example, '1' means exactly one instance and '0..*' means zero to many instances.
 
   </details>
  
