@@ -183,10 +183,16 @@ Based on the requirements, you can often already come up with a number of scenar
 The Test Plan outlines the specific steps taken to verify each requirement of the application. It includes the actions, inputs, and the expected outcomes for each of my test cases. In essence, the Test Plan guides the testing process and helps ensure that each requirement is tested appropriately.
 | Test Case | Use Case(s) | Input | Expected Output |
 | --- | --- | --- | --- |
-| TC01 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
-| TC02 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users |
-| TC03 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content |
-| TC04 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned |
+| TC01 | FR-02 | Action: “Create post”, 
+Title: “Test post”, 
+Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
+| TC02 | FR-03 | Action: “View feed”, 
+Filter: “All users” | Feed displayed with posts from all users |
+| TC03 | FR-06 | Action: “Edit post”, 
+Post ID: 1, 
+New content: “Updated content” | Post with ID 1 updated with new content |
+| TC04 | FR-07 | Action: “Query database”, 
+Query: “SELECT * FROM posts” | Query executed and results returned |
 | TC05 | FR-08 | Action: “Run tests” | Tests executed and results reported |
 
 
