@@ -1,175 +1,92 @@
 @startuml
-!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
-!define primary_key(x) <u>x</u>
-!define not_null(x) <b>x</b>
 
-namespace RedditBusinessLayer.Entities {
-  class Comment {
-    + {static} int Id
-    + {static} string Content
-    + {static} DateTime DateCreated
-    + {static} int UserId
-    + {static} int PostId
-    + void UpdateContent(string newContent)
-  }
-  class Post {
-    + {static} int Id
-    + {static} string Title
-    + {static} string Content
-    + {static} DateTime DateCreated
-    + {static} int UserId
-    + {static} int SubredditId
-    + Subreddit Subreddit
-    + User User
-    + void UpdateTitle(string newTitle)
-    + void UpdateContent(string newContent)
+package "RedditBusinessLayer" {
+
+    class "PostService" {
+        +IPostRepository _postRepository
+        +List<Post> GetPosts()
+        +Post GetPostById(int postId)
+        +void CreatePost(Post post)
+        +void UpdatePost(Post post)
+        +void DeletePost(Post post)
+        +List<Post> GetPostsBySubredditId(int subredditId)
+        +List<Post> GetPostsWithSubredditAndUser()
+    }
+
+    class "SubredditService" {
+        +ISubredditRepository _subredditRepository
+        +List<Subreddit> GetSubreddits()
+        +Subreddit GetSubredditById(int subredditId)
+        +void UpdateSubreddit(Subreddit subreddit)
+    }
+
+    class "UserService" {
+        +IUserRepository _userRepository
+        +List<User> GetUsers()
+        +User GetUserById(int userId)
+        +void UpdateUser(User user)
+    }
+
+    interface "IPostRepository" {
+        +List<Post> GetPosts()
+        +Post GetPostById(int postId)
+        +void CreatePost(Post post)
+        +void UpdatePost(Post post)
+        +void DeletePost(Post post)
+        +List<Post> GetPostsBySubredditId(int subredditId)
+        +List<Post> GetPostsWithSubredditAndUser()
+    }
+
+    interface "ISubredditRepository" {
+        +List<Subreddit> GetSubreddits()
+        +Subreddit GetSubredditById(int subredditId)
+        +void UpdateSubreddit(Subreddit subreddit)
+    }
+
+    interface "IUserRepository" {
+        +List<User> GetUsers()
+        +User GetUserById(int userId)
+        +void UpdateUser(User user)
+    }
+
+    class "Post" {
+        -int Id
+        -string Title
+        -string Content
+        -DateTime DateCreated
+        -int UserId
+        -int SubredditId
+        +Post(int id, string title, string content, DateTime dateCreated, int userId, int subredditId)
+        +void UpdateTitle(string title)
+        +void UpdateContent(string content)
+    }
+
+    class "Subreddit" {
+        -int Id
+        -string Name
+        -string Description
+        +Subreddit(int id, string name, string description)
+        +void UpdateName(string name)
+        +void UpdateDescription(string description)
+    }
+
+    class "User" {
+      -int Id
+      -string Username
+      -string Password
+      -string Email
+      +User(int id, string username, string password, string email)
+      +void UpdateUsername(string username)
+      +void UpdatePassword(string password)
+      +void UpdateEmail(string email)
   }
 
-  class Subreddit {
-    + List<Post> Posts
-    + {static} int Id
-    + {static} string Name
-    + {static} string Description
-    + void UpdateName(string newName)
-    + void UpdateDescription(string newDescription)
-  }
-class User {
-    + {static} int Id
-    + {static} string Username
-    + {static} string Password
-    + {static} string Email
-    + void UpdateUsername(string newUsername)
-    + void UpdatePassword(string newPassword)
-    + void UpdateEmail(string newEmail)
-  }
+  "Post" "0..*" -- "1" "User" : posted by
+  "Post" "0..*" -- "1" "Subreddit" : belongs to
+  PostService ..> IPostRepository : uses
+  SubredditService ..> ISubredditRepository : uses
+  UserService ..> IUserRepository : uses
+
 }
-
-namespace RedditBusinessLayer.Interfaces {
-  interface IPostRepository {
-    + List<Post> GetPosts()
-    + List<Post> GetPostsBySubredditId(int subredditId)
-    + List<Post> GetPostsWithSubredditAndUser()
-    + Post GetPostById(int postId)
-    + void UpdatePost(Post post)
-    + void CreatePost(Post post)
-    + void DeletePost(Post post)
-  }
-  interface ISubredditRepository {
-    + List<Subreddit> GetSubreddits()
-    + Subreddit GetSubredditById(int subredditId)
-    + void UpdateSubreddit(Subreddit subreddit)
-  }
-  interface IUserRepository {
-    + List<User> GetUsers()
-    + User GetUserById(int userId)
-    + void UpdateUser(User user)
-  }
-}
-
-namespace RedditBusinessLayer.Services {
-  class PostService {
-    .. Constructor ..
-    + PostService(IPostRepository postRepository)
-
-    .. Properties ..
-    - IPostRepository _postRepository
-
-    .. Methods ..
-    + List<Post> GetPosts()
-    + Post GetPostById(int postId)
-    + void UpdatePost(int postId, string newTitle, string newContent)
-  }
-  class RedditService {
-    .. Constructor ..
-    + RedditService(IPostRepository postRepository, ISubredditRepository subredditRepository, IUserRepository userRepository)
-
-    .. Properties ..
-    - IPostRepository _postRepository
-    - ISubredditRepository _subredditRepository
-    - IUserRepository _userRepository
-
-    .. Methods ..
-    + List<Post> GetPosts()
-    + List<Subreddit> GetSubreddits()
-    + List<User> GetUsers()
-  }
-  class SubredditService {
-    .. Constructor ..
-    + SubredditService(ISubredditRepository subredditRepository)
-
-    .. Properties ..
-    - ISubredditRepository _subredditRepository
-
-    .. Methods ..
-    + Subreddit GetSubredditById(int subredditId)
-    + List<Subreddit> GetSubreddits()
-    + void UpdateSubreddit(Subreddit subreddit)
-  }
-  class UserService {
-    .. Constructor ..
-    + UserService(IUserRepository userRepository)
-
-    .. Properties ..
-    - IUserRepository _userRepository
-
-    .. Methods ..
-    + List<User> GetUsers()
-    + User GetUserById(int userId)
-    + void UpdateUser(int userId, string newUsername, string newPassword, string newEmail)
-  }
-}
-
-namespace RedditDataLayer.Repos {
-class PostRepository {
-    .. Constructor ..
-    + PostRepository(string connectionString)
-
-    .. Properties ..
-    - string _connectionString
-
-    .. Methods ..
-    + List<Post> GetPosts()
-    + List<Post> GetPostsBySubredditId(int subredditId)
-    + Post GetPostById(int postId)
-    + void UpdatePost(Post post)
-    + void CreatePost(Post post)
-    + void DeletePost(Post post)
-    + List<Post> GetPostsWithSubredditAndUser()
-  }
-  class SubredditRepository {
-    .. Constructor ..
-    + SubredditRepository(string connectionString)
-
-    .. Properties ..
-    - string _connectionString
-
-    .. Methods ..
-    + List<Subreddit> GetSubreddits()
-    + Subreddit GetSubredditById(int subredditId)
-    + void UpdateSubreddit(Subreddit subreddit)
-  }
-  class UserRepository {
-    .. Constructor ..
-    + UserRepository(string connectionString)
-
-    .. Properties ..
-    - string _connectionString
-
-    .. Methods ..
-    + List<User> GetUsers()
-    + User GetUserById(int userId)
-    + void UpdateUser(User user)
-  }
-}
-
-RedditBusinessLayer.Interfaces.IPostRepository <|.. RedditDataLayer.Repos.PostRepository
-RedditBusinessLayer.Interfaces.ISubredditRepository <|.. RedditDataLayer.Repos.SubredditRepository
-RedditBusinessLayer.Interfaces.IUserRepository <|.. RedditDataLayer.Repos.UserRepository
-RedditBusinessLayer.Services.PostService *-- RedditBusinessLayer.Interfaces.IPostRepository
-RedditBusinessLayer.Services.RedditService *-- RedditBusinessLayer.Interfaces.IPostRepository
-RedditBusinessLayer.Services.RedditService *-- RedditBusinessLayer.Interfaces.ISubredditRepository
-RedditBusinessLayer.Services.RedditService *-- RedditBusinessLayer.Interfaces.IUserRepository
-RedditBusinessLayer.Services.SubredditService *-- RedditBusinessLayer.Interfaces.ISubredditRepository
-RedditBusinessLayer.Services.UserService *-- RedditBusinessLayer.Interfaces.IUserRepository
 
 @enduml
