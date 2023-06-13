@@ -250,6 +250,19 @@ Class Diagram:
 </div>
 
 Entity Relationship Diagram:
+The `reddit` database consists of four entities: `Comments`, `Posts`, `Subreddits`, and `Users`.
+
+Entities and Attributes
+- The `Comments` entity has the following attributes: `Id`, `Content`, `DateCreated`, `UserId`, and `PostId`.
+- The `Posts` entity has the following attributes: `Id`, `Title`, `Content`, `DateCreated`, `UserId`, and `SubredditId`.
+- The `Subreddits` entity has the following attributes: `Id`, `Name`, and `Description`.
+- The `Users` entity has the following attributes: `Id`, `Username`, `Password`, and `Email`.
+
+Relationships
+- There is a relationship between the `Comments` and `Posts` entities, representing the foreign key constraint on the `PostId` column in the `Comments` table.
+- There is a relationship between the `Comments` and `Users` entities, representing the foreign key constraint on the `UserId` column in the `Comments` table.
+- There is a relationship between the `Posts` and `Subreddits` entities, representing the foreign key constraint on the `SubredditId` column in the `Posts` table.
+- There is a relationship between the `Posts` and `Users` entities, representing the foreign key constraint on the `UserId` column in the `Posts` table.
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Conceptual model/ERD1.png" alt="Entity Relationship Diagram">
 </div>
