@@ -258,7 +258,7 @@ Eventually, you will also start storing things in a database (this is one of the
 Class Diagram:
 1. **User, Post, Subreddit (Entities)**: These classes represent the core business objects in the system. A user can create many posts, and each post belongs to one subreddit.
 
-2. UserService, PostService, SubredditService (BusinessLayer)**: These classes use the repositories to perform operations on the entities and manage the business logic of the application. They also make sure that any business rules or invariants are upheld.
+2. **UserService, PostService, SubredditService (BusinessLayer)**: These classes use the repositories to perform operations on the entities and manage the business logic of the application. They also make sure that any business rules or invariants are upheld.
 
 3. **IUserRepository, IPostRepository, ISubredditRepository (BusinessLayer)**: These are the interfaces that the repository classes implement. They define the common methods that the repository classes must have.
 
