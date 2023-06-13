@@ -124,7 +124,7 @@ The C4 model provides an explanation of the Context diagramLinks to an external 
   </details>
 
 <div align="center">
-<img src="/SEM2/The individual project/Docs/Context Diagram/V2 Context Diagram.jpg" alt="Context Diagram">
+<img src="/SEM2/The individual project/Docs/Context Diagram/V3 Context Diagram.jpg" alt="Context Diagram">
 </div>
 
 
@@ -142,11 +142,26 @@ Once you have set up a Context diagram and a Conceptual model, you have a nice a
 
   </details>
 
+The EERD represents a database with four entities: `Comment`, `Post`, `Subreddit`, and `User`.
+
+Entities and Attributes
+- The `Comment` entity has the following attributes: `Id`, `DateCreated`, and `Content`.
+- The `Post` entity has the following attributes: `Id`, `Title`, `Content`, and `DateCreated`.
+- The `Subreddit` entity has the following attributes: `Id`, `Description`, and `Name`.
+- The `User` entity has the following attributes: `Id`, `Email`, `Username`, and `Password`.
+
+Relationships
+- There is a many-to-one relationship between the `Comment` and `Post` entities, represented by a hollow diamond labeled "On".
+- There is a many-to-one relationship between the `Comment` and `User` entities, represented by a hollow diamond labeled "Writes".
+- There is a many-to-one relationship between the `Post` and `Subreddit` entities, represented by a hollow diamond labeled "In".
+- There is a many-to-one relationship between the `Post` and `User` entities, represented by a hollow diamond labeled "Creates".
+
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Conceptual model/V2 EER.jpg" alt="Conceptual Model">
 </div>
 
-## UI Sketches
+
+### UI Sketches
 <details><summary>Assignment</summary>
 A UI sketch can help gather requirements. By thinking about what the site looks like, you also force yourself to consider what functionality must be present to make that happen. Note that an outline should be mostly sketchy; that sounds obvious, but make sure it doesn't contain too much detail. It certainly shouldn't look too detailed either.
 
@@ -159,8 +174,6 @@ A UI sketch can help gather requirements. By thinking about what the site looks 
 </div>
 
 
-
-
 ### Test Plan + Test Matrix
 <details><summary>Assignment</summary>
 Based on the requirements, you can often already come up with a number of scenarios that your application must meet. Both the 'happy flow', where you go through the steps as it should be, but also the error situations. For both of these scenarios you can invent a test to verify that your software works as intended. You can document these tests in a test plan and demonstrate that you cover your requirements with a test matrix.
@@ -170,25 +183,22 @@ Based on the requirements, you can often already come up with a number of scenar
 The Test Plan outlines the specific steps taken to verify each requirement of the application. It includes the actions, inputs, and the expected outcomes for each of my test cases. In essence, the Test Plan guides the testing process and helps ensure that each requirement is tested appropriately.
 | Test Case | Use Case(s) | Input | Expected Output |
 | --- | --- | --- | --- |
-| TC01 | FR-02 | Action: “Create post”, Title: “Test post”, Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
-| TC02 | FR-03 | Action: “View feed”, Filter: “All users” | Feed displayed with posts from all users |
-| TC03 | FR-04 | Action: “Upvote post”, Post ID: 1 | Post with ID 1 upvoted |
-| TC04 | FR-05 | Action: “Comment on post”, Post ID: 1, Comment: “This is a test comment” | Comment added to post with ID 1 |
-| TC05 | FR-06 | Action: “Edit post”, Post ID: 1, New content: “Updated content” | Post with ID 1 updated with new content |
-| TC06 | FR-07 | Action: “Query database”, Query: “SELECT * FROM posts” | Query executed and results returned |
-| TC07 | FR-08 | Action: “Run tests” | Tests executed and results reported |
+| TC01 | FR-02 | Action: “Create post”<br>Title: “Test post”<br>Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
+| TC02 | FR-03 | Action: “View feed”<br>Filter: “All users” | Feed displayed with posts from all users |
+| TC03 | FR-06 | Action: “Edit post”<br>Post ID: 1<br>New content: “Updated content” | Post with ID 1 updated with new content |
+| TC04 | FR-07 | Action: “Query database”<br>Query: “SELECT * FROM posts” | Query executed and results returned |
+| TC05 | FR-08 | Action: “Run tests” | Tests executed and results reported |
 
 
-While the Test Plan details the testing process, the Test Matrix cross-references each test case with the specific requirements they are designed to test. This helps me ensure that all requirements are being covered by the tests. Each 'X' in the matrix represents a test case that covers the respective requirement.
-| Test Case | FR-02 | B-02.1 | K-02.1 | FR-03 | B-03.1 | K-03.1 | FR-04 | B-04.1 | K-04.1 | FR-05 | B-05.1 | K-05.1 | FR-06 | B-06.1 | K-06.1 | FR-07 | B-07.1 | K-07.1 | FR-08 | B-08.1 | K-08.1 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| TC01 | X | X | X | | | | | | | | | | | | | | | | | | |
-| TC02 | | | | X | X | X | | | | | | | | | | | | | | | |
-| TC03 | | | | | | | X | X | X | | | | | | | | | | | | |
-| TC04 | | | | | | | | | | X | X | X | | | | | | | | | |
-| TC05 | | | | | | | | | | | | | X | X | X | | | | | | |
-| TC06 | | | | | | | | | | | | | | | | X | X | X | | | |
-| TC07 | | | | | | | | | | | | | | | | | | | X | X | X |
+Given that only the requirements FR-02, FR-03, FR-06, FR-07, and FR-08 are being tested, the Test Matrix looks like this:
+| Test Case	| FR-02	| B-02.1	| K-02.1	| FR-03	| B-03.1	| K-03.1 | FR-06 | B-06.1 | K-06.1 | FR-07 | B-07.1 | K-07.1 | FR-08 | B-08.1 | K-08.1 |
+| ---		|---	| ---		| ---		| ---	| ---		| ---		| ---	| ---	| ---		| ---	| ---		| ---		| ---	| ---		| ---		|
+| TC01		| X	| X		| X		| 
+| TC02		|  	|  		|  		| X	| X		| X
+| TC03		|  	|  		|  		|   	|  		|   	| X	| X		| X
+| TC04		|  	|  		|  		|   	|  		|   	|   	|  		|   		| X	| X		| X
+| TC05		|  	|  		|  		|   	|  		|   	|   	|  		|   		|   	|  		|   	| X	| X		| X
+
 
 The Test Plan and Test Matrix together form a comprehensive approach to validating the functionality and quality of my Reddit replica application.
 
