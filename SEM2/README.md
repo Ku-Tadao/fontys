@@ -250,6 +250,7 @@ Class Diagram:
 </div>
 
 Entity Relationship Diagram:
+
 The `reddit` database consists of four entities: `Comments`, `Posts`, `Subreddits`, and `Users`.
 
 Entities and Attributes
