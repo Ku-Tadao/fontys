@@ -77,13 +77,13 @@ The next step in developing the application is to create Use Cases based on the 
 
 Field | Description
 --- | ---
-Name | UC01: Create an account and login
-Summary | - A user can create an account on the platform by providing their information and choosing a secure password.<br>- The platform implements user authentication and authorization according to industry best practices to ensure the security of user data.
+Name | UC01: Comment on posts and reply to other comments
+Summary | - A user can comment on posts and reply to other comments.<br>- The platform supports threaded discussions and allows users to easily navigate between different levels of comments.
 Actors | User
 Assumptions | None
-Scenario | - The actor navigates to the platform’s homepage and clicks on the “Sign Up” button.<br>- The actor is redirected to a registration page where they are prompted to enter their personal information such as their name, email address, and date of birth.<br>- The actor chooses a unique username and a secure password that meets the platform’s password requirements.<br>- The actor clicks on the “Submit” button to create their account.<br>- The actor receives a confirmation email with a link to verify their email address.<br>- The actor clicks on the verification link to complete the registration process.<br>- The actor can now login securely using their username and password.
-Exceptions | - Not all required information has been entered.<br>- The entered password does not meet the security requirements.<br>- The chosen username is already taken.
-Result | A new account has been created and the user can login securely.
+Scenario | - The actor navigates to a post that they want to comment on.<br>- The actor clicks on the “Comment” button located below the post.<br>- The actor is redirected to a comment creation page where they can enter their comment text.<br>- The actor can format their comment using the platform’s text editor.<br>- The actor can preview their comment before publishing it by clicking on the “Preview” button.<br>- Once satisfied with their comment, the actor clicks on the “Submit” button to publish it.<br>- The actor can also reply to other comments by clicking on the “Reply” button located below each comment.<br>- The actor is redirected to a reply creation page where they can enter their reply text following the same steps as described above.
+Exceptions | - The entered comment or reply text is invalid or does not meet subreddit rules.
+Result | A new comment or reply has been created and is visible to other users.
 
 Field | Description
 --- | ---
@@ -183,17 +183,16 @@ Based on the requirements, you can often already come up with a number of scenar
 The Test Plan outlines the specific steps taken to verify each requirement of the application. It includes the actions, inputs, and the expected outcomes for each of my test cases. In essence, the Test Plan guides the testing process and helps ensure that each requirement is tested appropriately.
 | Test Case | Use Case(s) | Input | Expected Output |
 | --- | --- | --- | --- |
-| TC01 | UC02: Create a new post | Action: “Create post”<br>Title: “Test post”<br>Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
-| TC02 | UC03: View a feed of posts | Action: “View feed”<br>Filter: “All users” | Feed displayed with posts from all users |
-| TC03 | UC01: Create an account and login | Action: “Create account”<br>Username: “testuser”<br>Password: “password123” | Account created with username “testuser” and user can login with password “password123” |
-
+| TC01 | UC01: Comment on posts and reply to other comments | Action: “Comment on post”<br>Post ID: 1<br>Comment text: “This is a test comment” | Comment with text “This is a test comment” created on post with ID 1 |
+| TC02 | UC02: Create a new post | Action: “Create post”<br>Title: “Test post”<br>Content: “This is a test post” | Post created with title “Test post” and content “This is a test post” |
+| TC03 | UC03: View a feed of posts | Action: “View feed”<br>Filter: “All users” | Feed displayed with posts from all users |
 
 Given that only the requirements FR-02, FR-03, FR-06, FR-07, and FR-08 are being tested, the Test Matrix looks like this:
-| Test Case	| UC01: Create an account and login	| UC02: Create a new post	| UC03: View a feed of posts |
+| Test Case	| UC01: Comment on posts and reply to other comments	| UC02: Create a new post	| UC03: View a feed of posts |
 | ---		|---					| ---				| ---				|
-| TC01		|  				| X				|  				|
-| TC02		|  				|  				| X				|
-| TC03		| X				|  				|  				|
+| TC01		| X				|  				|  				|
+| TC02		|  				| X				|  				|
+| TC03		|  				|  				| X				|
 
 The Test Plan and Test Matrix together form a comprehensive approach to validating the functionality and quality of my Reddit replica application.
 
