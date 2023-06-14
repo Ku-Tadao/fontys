@@ -1,7 +1,0 @@
-@startuml
-interface IUserRepository {
-    GetUsers() : List<User>
-    GetUserById(userId:int) : User
-    UpdateUser(user:User) : void
-}
-@enduml

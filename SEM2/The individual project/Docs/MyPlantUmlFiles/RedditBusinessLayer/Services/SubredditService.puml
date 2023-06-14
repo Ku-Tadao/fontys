@@ -1,9 +1,0 @@
-@startuml
-class SubredditService {
-    + SubredditService(subredditRepository:ISubredditRepository)
-    + GetSubredditById(subredditId:int) : Subreddit
-    + GetSubreddits() : List<Subreddit>
-    + UpdateSubreddit(subreddit:Subreddit) : void
-}
-SubredditService --> "_subredditRepository" ISubredditRepository
-@enduml

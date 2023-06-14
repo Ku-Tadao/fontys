@@ -1,9 +1,0 @@
-@startuml
-class UserService {
-    + UserService(userRepository:IUserRepository)
-    + GetUsers() : List<User>
-    + GetUserById(userId:int) : User
-    + UpdateUser(userId:int, newUsername:string, newPassword:string, newEmail:string) : void
-}
-UserService --> "_userRepository" IUserRepository
-@enduml

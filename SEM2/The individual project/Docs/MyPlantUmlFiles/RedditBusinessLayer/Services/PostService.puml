@@ -1,9 +1,0 @@
-@startuml
-class PostService {
-    + PostService(postRepository:IPostRepository)
-    + GetPosts() : List<Post>
-    + GetPostById(postId:int) : Post
-    + UpdatePost(postId:int, newTitle:string, newContent:string) : void
-}
-PostService --> "_postRepository" IPostRepository
-@enduml

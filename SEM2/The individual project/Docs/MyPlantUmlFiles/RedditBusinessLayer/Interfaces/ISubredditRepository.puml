@@ -1,7 +1,0 @@
-@startuml
-interface ISubredditRepository {
-    GetSubreddits() : List<Subreddit>
-    GetSubredditById(subredditId:int) : Subreddit
-    UpdateSubreddit(subreddit:Subreddit) : void
-}
-@enduml
