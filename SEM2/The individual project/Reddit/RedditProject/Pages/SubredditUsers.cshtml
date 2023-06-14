@@ -1,0 +1,32 @@
+﻿@page
+@model RedditProject.Pages.SubredditUsersModel
+@{
+    ViewData["Title"] = "Subreddit Users";
+}
+
+<h1>Subreddit Users</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Subreddit</th>
+        <th>Users</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var subreddit in Model.Subreddits)
+    {
+        <tr>
+            <td>@subreddit.Name</td>
+            <td>
+                <ul>
+                    @foreach (var user in subreddit.Users)
+                    {
+                        <li>@user.Username</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
