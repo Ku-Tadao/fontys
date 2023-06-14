@@ -16,11 +16,26 @@ namespace RedditBusinessLayer.Services
             _postRepository = postRepository ?? throw new ArgumentNullException();
         }
 
-        // No parameters, meaning no need to validate anything.
-        public List<Post> GetPosts()
+        public void CreatePost(Post post)
         {
-            return _postRepository.GetPosts();
+            // If the post is not found, an ArgumentException will be thrown with a message indicating that the post was not found.
+            if (post == null) throw new ArgumentException("Post not found.");
+
+            if (post.UserId > 0 && post.SubredditId > 0)
+            {
+                try
+                {
+                    _postRepository.CreatePost(post);
+                }
+                catch (Exception)
+                {
+                    throw new ArgumentException("Could not create Post");
+                }
+            }
+
+
         }
+
 
         public Post GetPostById(int postId)
         {
@@ -29,25 +44,37 @@ namespace RedditBusinessLayer.Services
             return _postRepository.GetPostById(postId);
         }
 
-        // Not being used yet
-        public void UpdatePost(int postId, string newTitle, string newContent)
+        public List<Post> GetPostsBySubredditId(int subredditId)
+        {
+            if (subredditId <= 0) throw new ArgumentOutOfRangeException();
+            return _postRepository.GetPostsBySubredditId(subredditId);
+        }
+
+        public List<Post> GetPostsWithSubredditAndUser()
+        {
+            return _postRepository.GetPostsWithSubredditAndUser();
+        }
+
+        public void DeletePost(Post post)
         {
             // If the postId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the postId must be greater than 0.
-            if (postId <= 0) throw new ArgumentOutOfRangeException();
-            
-            // If the newTitle is null or whitespace, an ArgumentException will be thrown with a message indicating that the newTitle cannot be null or whitespace.
-            if (string.IsNullOrWhiteSpace(newTitle)) throw new ArgumentException("New title cannot be null or whitespace.");
-            
-            // If the newContent is null or whitespace, an ArgumentException will be thrown with a message indicating that the newContent cannot be null or whitespace.
-            if (string.IsNullOrWhiteSpace(newContent)) throw new ArgumentException("New content cannot be null or whitespace.");
+            if (post.Id <= 0) throw new ArgumentOutOfRangeException();
+            _postRepository.DeletePost(post);
+        }
 
-            var post = _postRepository.GetPostById(postId);
-            
+
+        public void UpdatePost(Post post)
+        {
+            // If the postId is less than or equal to 0, an ArgumentOutOfRangeException will be thrown with a message indicating that the postId must be greater than 0.
+            if (post.Id <= 0) throw new ArgumentOutOfRangeException();
+
             // If the post is not found, an ArgumentException will be thrown with a message indicating that the post was not found.
             if (post == null) throw new ArgumentException("Post not found.");
-            post.UpdateTitle(newTitle);
-            post.UpdateContent(newContent);
+            post.UpdateTitle(post.Title);
+            post.UpdateContent(post.Content);
             _postRepository.UpdatePost(post);
         }
+
+
     }
 }

@@ -16,7 +16,6 @@ public class PostRepository : IPostRepository
 
     public List<Post> GetPosts()
     {
-        // gebruik Try-Catch, geen Finally
         var posts = new List<Post>();
         using var connection = new SqlConnection(_connectionString);
         connection.Open();
@@ -47,7 +46,7 @@ public class PostRepository : IPostRepository
         using var reader = command.ExecuteReader();
         if (!reader.Read()) return null;
         var post = new Post(
-            reader.GetInt32("Id"), 
+            reader.GetInt32("Id"),
             reader.GetString("Title"),
             reader.GetString("Content"),
             reader.GetDateTime("DateCreated"),

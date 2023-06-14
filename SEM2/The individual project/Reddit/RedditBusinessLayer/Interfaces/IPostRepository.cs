@@ -4,7 +4,6 @@ namespace RedditBusinessLayer.Interfaces;
 
 public interface IPostRepository
 {
-    List<Post> GetPosts();
     List<Post> GetPostsBySubredditId(int subredditId);
     List<Post> GetPostsWithSubredditAndUser();
     Post GetPostById(int postId);

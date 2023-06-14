@@ -2,7 +2,7 @@
 
 namespace RedditBusinessLayer.Interfaces;
 
-public interface  ISubredditRepository
+public interface ISubredditRepository
 {
     List<Subreddit> GetSubreddits();
     Subreddit GetSubredditById(int subredditId);

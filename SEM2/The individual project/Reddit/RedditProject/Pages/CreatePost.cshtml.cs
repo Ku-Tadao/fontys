@@ -3,18 +3,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RedditBusinessLayer.Entities;
 using RedditBusinessLayer.Interfaces;
+using RedditBusinessLayer.Services;
 
 namespace RedditProject.Pages
 {
     public class CreatePostModel : PageModel
     {
-        private readonly IPostRepository _postRepository;
-        private readonly ISubredditRepository _subredditRepository;
+        private readonly PostService _postService;
+        private readonly SubredditService _subredditService;
 
         public CreatePostModel(IPostRepository postRepository, ISubredditRepository subredditRepository)
         {
-            _postRepository = postRepository;
-            _subredditRepository = subredditRepository;
+            _postService = new PostService(postRepository);
+            _subredditService = new SubredditService(subredditRepository);
         }
 
         [BindProperty]
@@ -30,7 +31,7 @@ namespace RedditProject.Pages
 
         public void OnGet()
         {
-            var subreddits = _subredditRepository.GetSubreddits();
+            var subreddits = _subredditService.GetSubreddits();
             SubredditSelectList = new SelectList(subreddits, "Id", "Name");
         }
 
@@ -42,7 +43,7 @@ namespace RedditProject.Pages
             }
 
             var post = new Post(0, Title, Content, DateTime.Now, 1, SubredditId);
-            _postRepository.CreatePost(post);
+            _postService.CreatePost(post);
 
             return RedirectToPage("/Index");
         }

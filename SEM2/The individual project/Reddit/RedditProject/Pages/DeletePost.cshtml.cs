@@ -1,16 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RedditBusinessLayer.Interfaces;
+using RedditBusinessLayer.Services;
 
 namespace RedditProject.Pages
 {
     public class DeletePostModel : PageModel
     {
-        private readonly IPostRepository _postRepository;
+        private readonly PostService _postService;
 
         public DeletePostModel(IPostRepository postRepository)
         {
-            _postRepository = postRepository;
+            _postService = new PostService(postRepository);
         }
 
         [BindProperty]
@@ -23,8 +24,8 @@ namespace RedditProject.Pages
 
         public IActionResult OnPost()
         {
-            var post = _postRepository.GetPostById(Id);
-            _postRepository.DeletePost(post);
+            var post = _postService.GetPostById(Id);
+            _postService.DeletePost(post);
 
             return RedirectToPage("/Index");
         }

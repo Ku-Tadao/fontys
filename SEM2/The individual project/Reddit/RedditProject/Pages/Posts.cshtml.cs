@@ -2,23 +2,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RedditBusinessLayer.Entities;
 using RedditBusinessLayer.Interfaces;
+using RedditBusinessLayer.Services;
 
 namespace RedditProject.Pages
 {
     public class PostsModel : PageModel
     {
-        private readonly IPostRepository _postRepository;
+        private readonly PostService _postService;
 
         public PostsModel(IPostRepository postRepository)
         {
-            _postRepository = postRepository;
+            _postService = new PostService(postRepository);
         }
 
         public List<Post> Posts { get; set; }
 
         public void OnGet()
         {
-            Posts = _postRepository.GetPostsWithSubredditAndUser();
+            Posts = _postService.GetPostsWithSubredditAndUser();
         }
     }
 }
