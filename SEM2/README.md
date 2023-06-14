@@ -294,7 +294,3 @@ Relationships
 <div align="center">
 <img src="/SEM2/The individual project/Docs/Conceptual model/ERD1.png" alt="Entity Relationship Diagram">
 </div>
-
-
-## Testing
-**Unittest (automatic) and Acceptance testing are not ready yet**
