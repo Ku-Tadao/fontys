@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\kubil\AppData\Local\Temp\JetBrains\ReSharperPlatformVs17\vAny_0afc7543\CoverageData\_Visitor Placement Tool.-392852421\Snapshot\snapshot.utdcvr</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=02c3a299_002D086e_002D45c7_002D9a3b_002D62f54cca97d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestAssignSeats" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::57CA62C9-7F9A-45E2-9A86-3D3071EC3916::.NETFramework,Version=v4.8.1::EventOrganizer.EventTests.TestAssignSeats&lt;/TestId&gt;&#xD;

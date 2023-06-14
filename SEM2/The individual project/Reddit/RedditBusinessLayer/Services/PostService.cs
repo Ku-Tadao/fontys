@@ -36,6 +36,10 @@ namespace RedditBusinessLayer.Services
 
         }
 
+        public List<Post> GetPosts()
+        {
+            return _postRepository.GetPosts();
+        }
 
         public Post GetPostById(int postId)
         {
@@ -74,7 +78,5 @@ namespace RedditBusinessLayer.Services
             post.UpdateContent(post.Content);
             _postRepository.UpdatePost(post);
         }
-
-
     }
 }
