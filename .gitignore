@@ -1,25 +1,6 @@
-*/.vs
-
-/.idea
-/SEM2/The individual project/Visitor Placement Tool for Events/Visitor Placement Tool/bin
-/SEM2/The individual project/Visitor Placement Tool for Events/Visitor Placement Tool/obj
-/SEM2/The individual project/Visitor Placement Tool for Events/Visitor_Placement_Tool_Tests/bin/Debug/net7.0
-/SEM2/The individual project/Visitor Placement Tool for Events/Visitor_Placement_Tool_Tests/obj
-/SEM2/The individual project/Reddit/RedditUnitTest/bin/Debug/net7.0
-/SEM2/The individual project/Reddit/RedditProject/.vs
-/SEM2/The individual project/Circustrein-challenge/CircusTrainTest/obj
-/SEM2/The individual project/Circustrein-challenge/ConsoleCircusTrain/obj
-/SEM2/The individual project/Reddit/RedditBusinessLayer/obj
-/SEM2/The individual project/Reddit/RedditDataLayer/obj
-/SEM2/The individual project/Reddit/RedditProject/obj
-/SEM2/The individual project/Reddit/RedditUnitTest/obj
-/SEM2/The individual project/Visitor Placement Tool for Events/Visitor Placement Tool/packages
-/SEM2/The individual project/Reddit/RedditProject/bin
-/SEM2/The individual project/Circustrein-challenge/ConsoleCircusTrain/bin
-/SEM2/The individual project/Circustrein-challenge/CircusTrainTest/bin
-/SEM2/The individual project/Reddit/RedditBusinessLayer/bin
-/SEM2/The individual project/Reddit/RedditDataLayer/bin
-/.vs/fontys/FileContentIndex/1f2ab13b-59c9-4766-9104-a4dff72b0991.vsidx
-
 .vs/
+.idea/
+
+packages/
 bin/
+obj/
