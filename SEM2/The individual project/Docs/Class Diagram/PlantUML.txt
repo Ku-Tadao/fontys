@@ -44,6 +44,9 @@ class User {
   }
 }
 
+Comment "0..*" -- "1" Post : contains >
+Post "0..*" -- "1" Subreddit : contains >
+Post "0..*" -- "1" User : contains >
 namespace RedditBusinessLayer.Interfaces {
   interface IPostRepository {
     + List<Post> GetPosts()
@@ -119,52 +122,6 @@ namespace RedditBusinessLayer.Services {
   }
 }
 
-namespace RedditDataLayer.Repos {
-class PostRepository {
-    .. Constructor ..
-    + PostRepository(string connectionString)
-
-    .. Properties ..
-    - string _connectionString
-
-    .. Methods ..
-    + List<Post> GetPosts()
-    + List<Post> GetPostsBySubredditId(int subredditId)
-    + Post GetPostById(int postId)
-    + void UpdatePost(Post post)
-    + void CreatePost(Post post)
-    + void DeletePost(Post post)
-    + List<Post> GetPostsWithSubredditAndUser()
-  }
-  class SubredditRepository {
-    .. Constructor ..
-    + SubredditRepository(string connectionString)
-
-    .. Properties ..
-    - string _connectionString
-
-    .. Methods ..
-    + List<Subreddit> GetSubreddits()
-    + Subreddit GetSubredditById(int subredditId)
-    + void UpdateSubreddit(Subreddit subreddit)
-  }
-  class UserRepository {
-    .. Constructor ..
-    + UserRepository(string connectionString)
-
-    .. Properties ..
-    - string _connectionString
-
-    .. Methods ..
-    + List<User> GetUsers()
-    + User GetUserById(int userId)
-    + void UpdateUser(User user)
-  }
-}
-
-RedditBusinessLayer.Interfaces.IPostRepository <|.. RedditDataLayer.Repos.PostRepository
-RedditBusinessLayer.Interfaces.ISubredditRepository <|.. RedditDataLayer.Repos.SubredditRepository
-RedditBusinessLayer.Interfaces.IUserRepository <|.. RedditDataLayer.Repos.UserRepository
 RedditBusinessLayer.Services.PostService *-- RedditBusinessLayer.Interfaces.IPostRepository
 RedditBusinessLayer.Services.RedditService *-- RedditBusinessLayer.Interfaces.IPostRepository
 RedditBusinessLayer.Services.RedditService *-- RedditBusinessLayer.Interfaces.ISubredditRepository

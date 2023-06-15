@@ -246,34 +246,24 @@ Eventually, you will also start storing things in a database (this is one of the
 
 <details><summary>Class Diagram Legend</summary>
 
-1. Arrow with a hollow diamond (Aggregation): Represents a "has a" relationship. It signifies that one class is a part of another class. For example, the PostService has an IPostRepository. The diamond points towards the "whole" or "parent" class.
+1. **Association**: An association represents a relationship between two classes. It is represented by a line connecting the two classes. The cardinality of the relationship can be indicated by numbers or symbols next to the line. For example, “1” at one end and “0…*” at the other end indicates that one instance of the first class can be associated with zero or many instances of the second class.
 
-2. Arrow with a solid line (Association): It represents a relationship between two classes, but there is no ownership. For example, a Post is associated with a User and a Subreddit, but they do not necessarily own each other.
+2. **Composition**: A composition is a strong form of association where the lifetime of the part is dependent on the lifetime of the whole. It is represented by a line with a filled diamond at one end. The diamond end represents the whole, while the other end represents the part. The cardinality of the relationship can be indicated by numbers or symbols next to the line.
 
-3. Arrow with a dashed line (Dependency): It signifies that one class depends on another. This dependency could be a method parameter, local variable, or an operation call return.
-
-4. Arrow with a dashed line and closed, filled arrowhead (Implements): It represents a class that implements an interface.
-
-5. Arrow with a solid line and open arrowhead (Inheritance/Extension): It signifies that a class is inherited from another class or an interface.
-
-6. Numbers (Cardinality): They show the number of instances of one class linked to one instance of the other class. For example, '1' means exactly one instance and '0..*' means zero to many instances.
 
   </details>
  
 Class Diagram:
 1. **User, Post, Subreddit (Entities)**: These classes represent the core business objects in the system. A user can create many posts, and each post belongs to one subreddit.
 
-2. **UserService, PostService, SubredditService (BusinessLayer)**: These classes use the repositories to perform operations on the entities and manage the business logic of the application. They also make sure that any business rules or invariants are upheld.
+2. **UserService, PostService, SubredditService (BusinessLayer)**: These classes perform operations on the entities and manage the business logic of the application. They also make sure that any business rules or invariants are upheld.
 
-3. **IUserRepository, IPostRepository, ISubredditRepository (BusinessLayer)**: These are the interfaces that the repository classes implement. They define the common methods that the repository classes must have.
-
-4. **Relations:**
-- The UserService, PostService, and SubredditService classes depend on IUserRepository, IPostRepository, and ISubredditRepository interfaces, respectively. This relationship is represented by a line with a hollow diamond at the interface end.
+3. **Relations:**
 - There is a one-to-many relationship from User to Post and from Subreddit to Post, indicated by "1" at User and Subreddit ends, and "0..*" at Post end. This implies that one User/Subreddit can have zero or many Posts.
 
-5. **Packages**: The classes and interfaces are grouped into the RedditBusinessLayer package. RedditBusinessLayer contains the entities, interfaces, and services. This structure indicates a clear separation of concerns within the architecture of the application.
+4. **Packages**: The classes are grouped into the RedditBusinessLayer package. RedditBusinessLayer contains the entities and services. This structure indicates a clear separation of concerns within the architecture of the application.
 <div align="center">
-<img src="/SEM2/The individual project/Docs/Class Diagram/Final Class Diagram.png" alt="Class Diagram">
+<img src="/SEM2/The individual project/Docs/Class Diagram/Final2 Class Diagram.png" alt="Class Diagram">
 </div>
 
 Entity Relationship Diagram:
