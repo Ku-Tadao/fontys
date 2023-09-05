@@ -1,0 +1,109 @@
+@startuml
+package "RedditBusinessLayer" {
+  ' Entities
+  class User {
+    +Id: int
+    +Username: string
+    +Password: string
+    +Email: string
+  }
+
+  class Post {
+    +Id: int
+    +Title: string
+    +Content: string
+    +DateCreated: DateTime
+    +UserId: int
+    +SubredditId: int
+  }
+
+  class Subreddit {
+    +Id: int
+    +Name: string
+    +Description: string
+  }
+
+  ' Repositories Interfaces
+  interface IUserRepository {
+    +GetUsers(): List<User>
+    +GetUserById(int): User
+    +UpdateUser(User): void
+  }
+
+  interface IPostRepository {
+    +GetPosts(): List<Post>
+    +GetPostById(int): Post
+    +UpdatePost(Post): void
+    +CreatePost(Post): void
+    +DeletePost(Post): void
+  }
+
+  interface ISubredditRepository {
+    +GetSubreddits(): List<Subreddit>
+    +GetSubredditById(int): Subreddit
+    +UpdateSubreddit(Subreddit): void
+  }
+
+  ' Services
+  class UserService {
+    +GetUsers(): List<User>
+    +GetUserById(int): User
+    +UpdateUser(int, string, string, string): void
+  }
+
+  class PostService {
+    +GetPosts(): List<Post>
+    +GetPostById(int): Post
+    +UpdatePost(int, string, string): void
+  }
+
+  class SubredditService {
+    +GetSubreddits(): List<Subreddit>
+    +GetSubredditById(int): Subreddit
+    +UpdateSubreddit(Subreddit): void
+  }
+}
+
+package "RedditDataLayer" {
+  ' Repositories
+  class UserRepository {
+    +GetUsers(): List<User>
+    +GetUserById(int): User
+    +UpdateUser(User): void
+  }
+
+  class PostRepository {
+    +GetPosts(): List<Post>
+    +GetPostById(int): Post
+    +UpdatePost(Post): void
+    +CreatePost(Post): void
+    +DeletePost(Post): void
+  }
+
+  class SubredditRepository {
+    +GetSubreddits(): List<Subreddit>
+    +GetSubredditById(int): Subreddit
+    +UpdateSubreddit(Subreddit): void
+  }
+
+}
+
+' Relations
+User <-- IUserRepository
+User <-- UserService
+Post <-- IPostRepository
+Post <-- PostService
+Subreddit <-- ISubredditRepository
+Subreddit <-- SubredditService
+
+IUserRepository <|.. UserRepository
+IPostRepository <|.. PostRepository
+ISubredditRepository <|.. SubredditRepository
+
+UserService o-- IUserRepository
+PostService o-- IPostRepository
+SubredditService o-- ISubredditRepository
+
+Post "0..*" -- "1" User : contains
+Post "0..*" -- "1" Subreddit : contains
+@enduml
