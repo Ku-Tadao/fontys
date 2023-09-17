@@ -1,0 +1,29 @@
+**Field | Description**
+--- | ---
+Name | UC01: Add games to library
+Summary | - A user can add games to their library.<br>- The platform supports the addition of games by users.
+Actors | User
+Assumptions | The user is logged in and owns the game they want to add.
+Scenario | - The actor logs into their account and navigates to the game they want to add.<br>- The actor clicks on the “Add to Library” button located below the game.<br>- The actor is redirected to a confirmation page where they can confirm their action.<br>- Once confirmed, the actor clicks on the “Confirm” button to add the game to their library.
+Exceptions | - The entered game is invalid or does not exist.<br>- The user does not own the game they are trying to add.
+Result | A new game has been added to the user's library and is visible in their game collection.
+
+**Field | Description**
+--- | ---
+Name | UC02: Categorize games
+Summary | - A user can categorize games in their library.<br>- The platform supports the categorization of games by users.
+Actors | User
+Assumptions | The user is logged in and has games in their library.
+Scenario | - The actor logs into their account and navigates to the game they want to categorize.<br>- The actor clicks on the “Categorize” button located below the game.<br>- The actor is redirected to a categorization page where they can select a category for their game.<br>- Once a category is selected, the actor clicks on the “Confirm” button to categorize the game.
+Exceptions | - The selected category is invalid or does not exist.<br>- The user does not have the game they are trying to categorize in their library.
+Result | A game has been categorized and is visible under the selected category in the user's library.
+
+**Field | Description**
+--- | ---
+Name | UC03: Connect with friends
+Summary | - Users can connect with friends, see what they are playing, and join multiplayer games with them.<br>- The platform supports social features that allow users to connect with friends.
+Actors | User
+Assumptions | The user is logged in and has friends who also use the platform.
+Scenario | - The actor logs into their account and navigates to their friends list.<br>- The actor clicks on a friend's profile to see what they are playing.<br>- If a friend is playing a multiplayer game, the actor can click on the “Join Game” button to join them.<br>- If a friend is not currently playing a multiplayer game, the actor can send them an invitation to play together.
+Exceptions | - The friend does not approve of the connection.<br>- The friend is not currently playing a multiplayer game.
+Result | A connection has been made with a friend and/or a multiplayer game has been joined.
