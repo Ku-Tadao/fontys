@@ -79,6 +79,7 @@ The application will allow users to add games to their library, categorize them,
 The next step in developing the application is to create Use Cases based on the requirements. A Use Case describes "who" can do "what" with the system in question. Use Cases consist of a scenario description. The relationship between the Actors and their Use Cases can be represented in a Use Case diagram. Note that such a diagram is worthless without the descriptions.
 
   </details>
+  
 **Field | Description**
 --- | ---
 Name | UC01: Add games to library
