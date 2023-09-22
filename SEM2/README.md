@@ -80,7 +80,7 @@ The next step in developing the application is to create Use Cases based on the 
 
   </details>
   
-**Field | Description**
+Field | Description
 --- | ---
 Name | UC01: Add games to library
 Summary | - A user can add games to their library.<br>- The platform supports the addition of games by users.
@@ -90,7 +90,7 @@ Scenario | - The actor logs into their account and navigates to the game they wa
 Exceptions | - The entered game is invalid or does not exist.<br>- The user does not own the game they are trying to add.
 Result | A new game has been added to the user's library and is visible in their game collection.
 
-**Field | Description**
+Field | Description
 --- | ---
 Name | UC02: Categorize games
 Summary | - A user can categorize games in their library.<br>- The platform supports the categorization of games by users.
@@ -100,7 +100,7 @@ Scenario | - The actor logs into their account and navigates to the game they wa
 Exceptions | - The selected category is invalid or does not exist.<br>- The user does not have the game they are trying to categorize in their library.
 Result | A game has been categorized and is visible under the selected category in the user's library.
 
-**Field | Description**
+Field | Description
 --- | ---
 Name | UC03: Connect with friends
 Summary | - Users can connect with friends, see what they are playing, and join multiplayer games with them.<br>- The platform supports social features that allow users to connect with friends.
