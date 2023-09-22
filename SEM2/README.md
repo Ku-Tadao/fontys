@@ -31,12 +31,84 @@ Requirements often have 3 elements:
 
 </details>
 
+This project aims to create a Digital Game Library, similar to platforms like Steam. The main goal of the application is to provide a platform for users to manage and access their digital game collection efficiently.
+
+The primary users of this application will be gamers who have a vast collection of digital games and want an organized system to manage them. This application will resemble platforms like Steam, Epic Games Store, and GOG but will have its unique features tailored to the needs of our target users.
+
+The application will allow users to add games to their library, categorize them, track their playtime, and even provide recommendations based on their gaming preferences. It will also have social features allowing users to connect with friends, see what they are playing, and join multiplayer games with them.
+
+**Functional Requirements (FR)**:
+- FR-01: The platform allows users to create an account and login securely. (Must have)
+  - B-01.1: User authentication and authorization are implemented according to industry best practices to ensure the security of user data.
+  - K-01.1: The platform must prevent unauthorized access to user data.
+- FR-02: Users can add games to their library. (Must have)
+  - B-02.1: The platform supports the addition of games by users.
+  - K-02.1: Games must be displayed in a clear and organized manner.
+- FR-03: Users can categorize their games. (Should have)
+  - B-03.1: The platform implements efficient algorithms to sort and filter games based on user preferences and game categories.
+  - K-03.1: The platform must provide a responsive and user-friendly interface for categorizing games.
+- FR-04: Users can track their playtime. (Should have)
+  - B-04.1: The platform implements a fair and transparent tracking system that prevents abuse and ensures the integrity of user-generated content.
+  - K-04.1: The tracking system must be easy to use and understand.
+- FR-05: Users can receive game recommendations based on their preferences. (Should have)
+  - B-05.1: The platform supports a recommendation system that takes into account user preferences and gaming history.
+  - K-05.1: Recommendations must be accurate and relevant.
+- FR-06: Users can connect with friends, see what they are playing, and join multiplayer games with them. (Could have)
+  - B-06.1: The platform implements appropriate access controls to ensure that users can only connect with friends who have approved them.
+  - K-06.1: The social features must be easy to use and intuitive.
+- FR-07: Users can edit their account details. (Should have)
+  - B-07.1: The platform implements appropriate access controls to ensure that users can only modify their own account details.
+  - K-07.1: The platform must provide a user-friendly interface for editing account details.
+
+
+**Constraints (B)**:
+- B-07: Users cannot add a game to their library without owning it.
+- B-08: Users cannot connect with friends without their approval.
+- B-09: Users cannot edit the details of a game in their library.
+- B-10: Users cannot see the gaming activity of a friend who has not approved them.
+
+**Quality Requirements (K)**:
+- K-07: The system should display the game library in an organized manner.
+- K-08: The system should provide accurate game recommendations.
+- K-09: The system should provide fast and reliable access to data.
+- K-10: The system should be reliable and free of critical bugs.
+
 ### Use Cases
 <details><summary>Assignment</summary>
 
 The next step in developing the application is to create Use Cases based on the requirements. A Use Case describes "who" can do "what" with the system in question. Use Cases consist of a scenario description. The relationship between the Actors and their Use Cases can be represented in a Use Case diagram. Note that such a diagram is worthless without the descriptions.
 
   </details>
+**Field | Description**
+--- | ---
+Name | UC01: Add games to library
+Summary | - A user can add games to their library.<br>- The platform supports the addition of games by users.
+Actors | User
+Assumptions | The user is logged in and owns the game they want to add.
+Scenario | - The actor logs into their account and navigates to the game they want to add.<br>- The actor clicks on the “Add to Library” button located below the game.<br>- The actor is redirected to a confirmation page where they can confirm their action.<br>- Once confirmed, the actor clicks on the “Confirm” button to add the game to their library.
+Exceptions | - The entered game is invalid or does not exist.<br>- The user does not own the game they are trying to add.
+Result | A new game has been added to the user's library and is visible in their game collection.
+
+**Field | Description**
+--- | ---
+Name | UC02: Categorize games
+Summary | - A user can categorize games in their library.<br>- The platform supports the categorization of games by users.
+Actors | User
+Assumptions | The user is logged in and has games in their library.
+Scenario | - The actor logs into their account and navigates to the game they want to categorize.<br>- The actor clicks on the “Categorize” button located below the game.<br>- The actor is redirected to a categorization page where they can select a category for their game.<br>- Once a category is selected, the actor clicks on the “Confirm” button to categorize the game.
+Exceptions | - The selected category is invalid or does not exist.<br>- The user does not have the game they are trying to categorize in their library.
+Result | A game has been categorized and is visible under the selected category in the user's library.
+
+**Field | Description**
+--- | ---
+Name | UC03: Connect with friends
+Summary | - Users can connect with friends, see what they are playing, and join multiplayer games with them.<br>- The platform supports social features that allow users to connect with friends.
+Actors | User
+Assumptions | The user is logged in and has friends who also use the platform.
+Scenario | - The actor logs into their account and navigates to their friends list.<br>- The actor clicks on a friend's profile to see what they are playing.<br>- If a friend is playing a multiplayer game, the actor can click on the “Join Game” button to join them.<br>- If a friend is not currently playing a multiplayer game, the actor can send them an invitation to play together.
+Exceptions | - The friend does not approve of the connection.<br>- The friend is not currently playing a multiplayer game.
+Result | A connection has been made with a friend and/or a multiplayer game has been joined.
+
 
 ### Context Diagram
 <details><summary>Assignment</summary>
@@ -52,13 +124,6 @@ Additional information
 The C4 model provides an explanation of the Context diagramLinks to an external site.
 
   </details>
-
-<div align="center">
-<img src="/SEM2/The individual project/Docs/Context Diagram/V3 Context Diagram.jpg" alt="Context Diagram">
-</div>
-
-
-
 
 ### Conceptual Model
 <details><summary>Assignment</summary>
