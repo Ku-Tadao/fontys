@@ -13,6 +13,9 @@
     - [Architecture: Multilayered Architecture](#architecture-multilayered-architecture)
     - [Domain models, class diagrams and database design](#domain-models-class-diagrams-and-database-design)
   - [Testing](#testing)
+  - [Algorithmics](#Algorithmics)
+    - [Visitor Placement Tool for Events](#visitor-placement-tool-for-events)
+    - [Circustrain-challenge](#circustrain)
 
 ## Analysis
 
@@ -182,3 +185,33 @@ Eventually, you will also start storing things in a database (this is one of the
 
   </details>
 
+### Algorithmics
+<details><summary>Assignment Visitor Placement Tool</summary>
+For event organizers, a tool must be created that assigns a spot to each visitor. Along the course, which is different each time, boxes are created containing rows of chairs; there is variation in the shape and arrangement of the boxes. There are also quite a few requirements about the visitors.
+
+Download an overview of the requirements for this assignment Download an overview of the requirements for this assignment.
+
+When building a solution, it is important that you work on the following things:
+
+The structure of the different classes in the domain (for example, by creating a class diagram);
+The order in which a user will go through the different steps (for example, by working out scenarios);
+The operation of the classification algorithm (for example, by working out a flow chart);
+Using SOLID principles when setting up the code;
+Testing parts of the logic using unit tests.
+
+  </details>
+
+<details><summary>Circustrain</summary>
+Fewer and fewer animals are allowed to perform in circuses. Director Hans of circus Cirque du Goodbye is therefore forced to sell his animals. He is going to transport the animals by train to give them a good home elsewhere. However, the rent for the wagons is very high. Hans is not sure how to get all the animals on the train without paying too much for the rent.
+
+We are going to give Hans a hand. Create a program that allows different kinds of animals to be added. Each animal eats meat or plants and is small, medium or large in size. After entering all the animals, the program must be able to make a distribution of wagons. The distribution must meet the following requirements:
+
+An animal that likes meat will eat other animals that are of the same or smaller size. So make sure this does not occur.
+Each small animal counts for 1 point. Medium-sized animals count are 3 and large animals are 5 points. Each train wagon can carry a maximum of 10 points.
+Each wagon must be optimally utilized. So it is not allowed to place each animal in a separate wagon.
+Assignment
+Create a program that can enter animals and give a distribution of wagons based on the above description. The program must meet the specified requirements. Also make unit tests that show that your algorithm does not violate any of the requirements.
+
+  </details>
+  
+[Circustrain](https://github.com/Ku-Tadao/fontys/tree/main/SEM2/The%20individual%20project/Circustrain-challenge)
