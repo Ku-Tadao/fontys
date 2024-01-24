@@ -40,21 +40,8 @@ Feel free to browse through the folders of each semester to explore the various 
 git clone https://github.com/Ku-Tadao/fontys.git
 ```
 
-</details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Contributing
 
 If you'd like to contribute to this repository, please [open an issue](https://github.com/Ku-Tadao/fontys/issues/new) or submit a pull request. I appreciate any corrections, updates, or suggestions that can help improve the quality of the content.
+
+</details>
