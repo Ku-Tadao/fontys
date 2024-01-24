@@ -1,7 +1,18 @@
-#Update: 
+# Update: 
 Fontys is niets en uitsluitend tijdverspilling. Het is me duidelijk geworden dat het voordeliger is om online te studeren dan als een idioot in de klas te zitten googelen wat ik zoek. Leuk man, en dan ook nog een studieschuld opbouwen en 's ochtends verplicht wakker moeten worden. Dit is niets anders dan de maatschappij uitmelken omdat het een officieel geaccrediteerde universiteit is (het biedt duidelijk een waarde in dit kankerland).
 
 Verspil je tijd niet en studeer z.s.m. online (niet tot je 18e dan). 
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Information & Communication Technology Bachelor at Fontys
